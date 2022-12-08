@@ -1,0 +1,2442 @@
+views:
+  - theme: Backend-selected
+    title: Animations 01
+    path: animations-01
+    badges: []
+    cards:
+      - type: vertical-stack
+        cards:
+          - type: custom:stack-in-card
+            cards:
+              - type: custom:layout-card
+                layout_type: custom:grid-layout
+                tap_action: none
+                layout:
+                  grid-template-columns: 60px auto 12px
+                  margin: '-4px -4px -8px -4px;'
+                cards:
+                  - type: custom:mushroom-template-card
+                    icon: mdi:source-branch
+                    title: Source
+                    icon_color: blue
+                    card_mod:
+                      style: |
+                        ha-card {
+                          background: none;
+                          --ha-card-box-shadow: 0px;
+                        }
+                  - type: custom:mushroom-template-card
+                    entity: input_boolean.dropdown
+                    icon: mdi:chevron-down
+                    icon_color: disabled
+                    hold_action:
+                      action: none
+                    card_mod:
+                      style:
+                        mushroom-shape-icon:
+                          $: |
+                            .shape ha-icon {
+                              transition: transform 0.14s !important;
+                              {{ 'transform: rotate(-180deg);' if is_state(config.entity, 'on') }}
+                            }
+                          .: |
+                            ha-card {
+                              align-items: flex-end;
+                              box-shadow: none;
+                            }
+                            mushroom-shape-icon {
+                              --shape-color: none !important;
+                            }
+              - type: custom:stack-in-card
+                mode: horizontal
+                cards:
+                  - type: custom:mushroom-template-card
+                    primary: GitHub
+                    secondary: ''
+                    icon: mdi:github
+                    icon_color: 'off'
+                    layout: vertical
+                    primary_info: null
+                    tap_action:
+                      action: url
+                      url_path: >-
+                        https://github.com/Dodoooh/awesome-mushroom-cards/tree/main/mushroom-cards/10_Animations#animation-01
+                    card_mod:
+                      style: |
+                        ha-card { 
+                          width: 130px;
+                          margin-left: auto;
+                          margin-right: auto;
+                        } 
+                  - type: custom:mushroom-template-card
+                    primary: Community
+                    secondary: '@rhysb'
+                    icon: mdi:comment
+                    icon_color: blue
+                    layout: vertical
+                    primary_info: null
+                    tap_action:
+                      action: url
+                      url_path: >-
+                        https://community.home-assistant.io/t/mushroom-cards-build-a-beautiful-dashboard-easily/388590/3240?u=d0doooh
+                    card_mod:
+                      style: |
+                        ha-card { 
+                          width: 130px;
+                          margin-left: auto;
+                          margin-right: auto;
+                        } 
+                  - type: custom:mushroom-template-card
+                    primary: Version
+                    secondary: '1.0'
+                    icon: mdi:alpha-i
+                    icon_color: grey
+                    layout: vertical
+                    primary_info: null
+                    tap_action: none
+                    card_mod:
+                      style: |
+                        ha-card { 
+                          width: 130px;
+                          margin-left: auto;
+                          margin-right: auto;
+                        } 
+            card_mod:
+              style: |
+                ha-card {
+                  {{ 'height: 66px;' if is_state('input_boolean.dropdown', 'off') }}
+                }
+          - type: vertical-stack
+            cards:
+              - type: custom:mushroom-template-card
+                primary: Spin
+                icon: mdi:fan
+                icon_color: teal
+                card_mod:
+                  style:
+                    mushroom-shape-icon$: |
+                      ha-icon {
+                        --icon-animation: spin 1s linear infinite;
+                      }
+              - type: custom:mushroom-template-card
+                icon: mdi:pulse
+                icon_color: red
+                primary: Pulse
+                card_mod:
+                  style:
+                    mushroom-shape-icon$: |
+                      ha-icon {
+                        --icon-animation: pulse 2s ease-in-out infinite;
+                      }
+              - type: custom:mushroom-template-card
+                primary: Boil
+                icon: mdi:kettle-steam
+                icon_color: red
+                card_mod:
+                  style:
+                    mushroom-shape-icon$: |
+                      ha-icon {
+                        --icon-animation: boil 500ms infinite;
+                      }
+                      @keyframes boil {
+                        0%, 100% { transform: translate({{ range(-20, 20) | random / 10 }}px, {{ range(-20, 20) | random / 10 }}px) rotate({{ range(-15, 15) | random }}deg); }
+                        10% { transform: translate({{ range(-20, 20) | random / 10 }}px, {{ range(-20, 20) | random / 10 }}px) rotate({{ range(-15, 15) | random }}deg); clip-path: polygon(0 0, 66% 10%, 67% 30%, 88% 52%, 100% 100%, 0 100%); }
+                        20% { transform: translate({{ range(-20, 20) | random / 10 }}px, {{ range(-20, 20) | random / 10 }}px) rotate({{ range(-15, 15) | random }}deg); }
+                        30% { transform: translate({{ range(-20, 20) | random / 10 }}px, {{ range(-20, 20) | random / 10 }}px) rotate({{ range(-15, 15) | random }}deg); }
+                        40% { transform: translate({{ range(-20, 20) | random / 10 }}px, {{ range(-20, 20) | random / 10 }}px) rotate({{ range(-15, 15) | random }}deg); }
+                        50% { transform: translate({{ range(-20, 20) | random / 10 }}px, {{ range(-20, 20) | random / 10 }}px) rotate({{ range(-15, 15) | random }}deg); }
+                        60% { transform: translate({{ range(-20, 20) | random / 10 }}px, {{ range(-20, 20) | random / 10 }}px) rotate({{ range(-15, 15) | random }}deg); }
+                        70% { transform: translate({{ range(-20, 20) | random / 10 }}px, {{ range(-20, 20) | random / 10 }}px) rotate({{ range(-15, 15) | random }}deg); }
+                        80% { transform: translate({{ range(-20, 20) | random / 10 }}px, {{ range(-20, 20) | random / 10 }}px) rotate({{ range(-15, 15) | random }}deg); }
+                        90% { transform: translate({{ range(-20, 20) | random / 10 }}px, {{ range(-20, 20) | random / 10 }}px) rotate({{ range(-15, 15) | random }}deg); }
+                      }
+              - type: custom:mushroom-template-card
+                primary: Fire
+                icon: mdi:fire
+                icon_color: red
+                card_mod:
+                  style:
+                    mushroom-shape-icon$: |
+                      ha-icon {
+                        --icon-animation: fire 1.5s infinite;
+                        transform-origin: 50% 85%;
+                      }
+                      @keyframes fire {
+                          0% { transform: rotate({{range(-20, 20) | random / 10}}deg) scaleY({{range(9, 12) | random / 10}}); color: rgb(var(--rgb-red)); opacity: {{range(7, 10) | random / 10}}; }
+                          5% { transform: rotate({{range(-20, 20) | random / 10}}deg) scaleY({{range(9, 12) | random / 10}}); color: rgb(var(--rgb-deep-orange)); opacity: {{range(7, 10) | random / 10}}; }
+                          10% { transform: rotate({{range(-20, 20) | random / 10}}deg) scaleY({{range(9, 12) | random / 10}}); color: rgb(var(--rgb-red)); opacity: {{range(7, 10) | random / 10}}; }
+                          15% { transform: rotate({{range(-20, 20) | random / 10}}deg) scaleY({{range(9, 12) | random / 10}}); color: rgb(var(--rgb-deep-orange)); opacity: {{range(7, 10) | random / 10}}; }
+                          20% { transform: rotate({{range(-20, 20) | random / 10}}deg) scaleY({{range(9, 12) | random / 10}}); color: rgb(var(--rgb-deep-orange)); opacity: {{range(7, 10) | random / 10}}; }
+                          25% { transform: rotate({{range(-20, 20) | random / 10}}deg) scaleY({{range(9, 12) | random / 10}}); color: rgb(var(--rgb-red)); opacity: {{range(7, 10) | random / 10}}; }
+                          30% { transform: rotate({{range(-20, 20) | random / 10}}deg) scaleY({{range(9, 12) | random / 10}}); color: rgb(var(--rgb-red)); opacity: {{range(7, 10) | random / 10}}; }
+                          35% { transform: rotate({{range(-20, 20) | random / 10}}deg) scaleY({{range(9, 12) | random / 10}}); color: rgb(var(--rgb-deep-orange)); opacity: {{range(7, 10) | random / 10}}; }
+                          40% { transform: rotate({{range(-20, 20) | random / 10}}deg) scaleY({{range(9, 12) | random / 10}}); color: rgb(var(--rgb-red)); opacity: {{range(7, 10) | random / 10}}; }
+                          45% { transform: rotate({{range(-20, 20) | random / 10}}deg) scaleY({{range(9, 12) | random / 10}}); color: rgb(var(--rgb-deep-orange)); opacity: {{range(7, 10) | random / 10}}; }
+                          50% { transform: rotate({{range(-20, 20) | random / 10}}deg) scaleY({{range(9, 12) | random / 10}}); color: rgb(var(--rgb-deep-orange)); opacity: {{range(7, 10) | random / 10}}; }
+                          55% { transform: rotate({{range(-20, 20) | random / 10}}deg) scaleY({{range(9, 12) | random / 10}}); color: rgb(var(--rgb-red)); opacity: {{range(7, 10) | random / 10}}; }
+                          60% { transform: rotate({{range(-20, 20) | random / 10}}deg) scaleY({{range(9, 12) | random / 10}}); color: rgb(var(--rgb-deep-orange)); opacity: {{range(7, 10) | random / 10}}; }
+                          65% { transform: rotate({{range(-20, 20) | random / 10}}deg) scaleY({{range(9, 12) | random / 10}}); color: rgb(var(--rgb-red)); opacity: {{range(7, 10) | random / 10}}; }
+                          70% { transform: rotate({{range(-20, 20) | random / 10}}deg) scaleY({{range(9, 12) | random / 10}}); color: rgb(var(--rgb-deep-orange)); opacity: {{range(7, 10) | random / 10}}; }
+                          75% { transform: rotate({{range(-20, 20) | random / 10}}deg) scaleY({{range(9, 12) | random / 10}}); color: rgb(var(--rgb-deep-orange)); opacity: {{range(7, 10) | random / 10}}; }
+                          80% { transform: rotate({{range(-20, 20) | random / 10}}deg) scaleY({{range(9, 12) | random / 10}}); color: rgb(var(--rgb-red)); opacity: {{range(7, 10) | random / 10}}; }
+                          85% { transform: rotate({{range(-20, 20) | random / 10}}deg) scaleY({{range(9, 12) | random / 10}}); color: rgb(var(--rgb-red)); opacity: {{range(7, 10) | random / 10}}; }
+                          90% { transform: rotate({{range(-20, 20) | random / 10}}deg) scaleY({{range(9, 12) | random / 10}}); color: rgb(var(--rgb-deep-orange)); opacity: {{range(7, 10) | random / 10}}; }
+                          95% { transform: rotate({{range(-20, 20) | random / 10}}deg) scaleY({{range(9, 12) | random / 10}}); color: rgb(var(--rgb-red)); opacity: {{range(7, 10) | random / 10}}; }
+                          100% { transform: rotate({{range(-20, 20) | random / 10}}deg) scaleY({{range(9, 12) | random / 10}}); color: rgb(var(--rgb-deep-orange)); opacity: {{range(7, 10) | random / 10}}; }
+                      }
+              - type: custom:mushroom-template-card
+                icon: mdi:shower-head
+                icon_color: light-blue
+                primary: Shower
+                card_mod:
+                  style:
+                    mushroom-shape-icon$: |
+                      ha-icon {
+                        --icon-animation: clip 0.7s ease-out infinite;
+                      }
+                      @keyframes clip {
+                        0% {clip-path: inset(0 0 45% 0); }
+                        100% { clip-path: inset(0 0 0 0); }
+                      }
+              - type: custom:mushroom-template-card
+                icon: mdi:sprinkler
+                icon_color: cyan
+                primary: Sprinkler
+                card_mod:
+                  style:
+                    mushroom-shape-icon$: |
+                      ha-icon { 
+                        --icon-animation: sprinkle 2s linear infinite;
+                        transform-origin: 29% 88%; 
+                      }
+                      @keyframes sprinkle {
+                        0%, 15%, 30%, 45%, 60%, 100% { clip-path: inset(0 55% 0 0); transform: rotate(0deg); }
+                        1%, 16%, 31%, 46% { clip-path: inset(0 0 0 0); transform: rotate(-10deg); }
+                        6%, 21%, 36%, 51% { transform: rotate(2deg); }
+                      }
+              - type: custom:mushroom-template-card
+                icon: mdi:washing-machine
+                icon_color: amber
+                primary: Washing Machine
+                card_mod:
+                  style:
+                    mushroom-shape-icon$: |
+                      ha-icon {
+                        --icon-animation: shake 400ms ease-in-out infinite, drum 2s ease infinite;
+                        transform-origin: 50% 110%;
+                      }
+                      @keyframes shake {
+                        0%, 100% { transform: translate(0, 0) rotate(0); }
+                        20%  { transform: translate(0.4px, -0.4px) rotate(-4deg); }
+                        40%  { transform: translate(-0.4px, 0.4px) rotate(4deg); }
+                        60%  { transform: translate(0.4px, 0.4px) rotate(-4deg); }
+                        80%  { transform: translate(-0.4px, -0.4px) rotate(4deg); }
+                      }
+                      @keyframes drum {
+                        50%  { clip-path: polygon(0 0, 0 100%, 35% 100%, 34% 68%, 60% 41%, 71% 56%, 65% 74%, 47% 79%, 32% 69%, 35% 100%, 100% 100%, 100% 0); }
+                      }
+              - type: custom:mushroom-template-card
+                icon: mdi:dishwasher
+                icon_color: blue
+                primary: Dishwasher
+                card_mod:
+                  style:
+                    mushroom-shape-icon$: |
+                      ha-icon {
+                        --icon-animation: bounce 1.5s ease-in-out infinite, wash 1s ease-in-out infinite;
+                        transform-origin: 50% 75%;
+                      }
+                      @keyframes bounce {
+                        0%, 20%, 50%, 80%, 100% {transform: translateY(0); } 
+                        40% { transform: translateY(-1.2px) rotate(5deg); } 
+                        60% { transform: translateY(-1.1px) rotate(-4deg); } 
+                      } 
+                      @keyframes wash {
+                        50%  { clip-path: polygon(0 0, 0 100%, 35% 100%, 36% 74%, 31% 43%, 61% 40%, 71% 69%, 62% 78%, 36% 73%, 35% 100%, 100% 100%, 100% 0); }
+                      }
+              - type: custom:mushroom-template-card
+                icon: mdi:tumble-dryer
+                icon_color: teal
+                primary: Dryer
+                card_mod:
+                  style:
+                    mushroom-shape-icon$: |
+                      ha-icon {
+                        --icon-animation: shake 400ms ease-in-out infinite, drum 1s infinite;
+                        transform-origin: 50% 65%;
+                      }
+                      @keyframes shake {
+                        0%, 100% { transform: rotate(4deg); }
+                        50%  { transform: rotate(-4deg); }
+                      }
+                      @keyframes drum {
+                        50%  { clip-path: polygon(0 0, 0 100%, 35% 100%, 36% 74%, 31% 43%, 61% 40%, 71% 69%, 62% 78%, 36% 73%, 35% 100%, 100% 100%, 100% 0); }
+                      }
+              - type: custom:mushroom-template-card
+                primary: Ding
+                icon: mdi:bell-ring
+                icon_color: indigo
+                card_mod:
+                  style:
+                    mushroom-shape-icon$: |
+                      ha-icon {
+                        --icon-animation: ring 4s linear infinite;
+                        transform-origin: 50% 15%;
+                      }
+                      @keyframes ring {
+                        0% { transform: rotate(0); clip-path: polygon(0 50%, 0 100%, 100% 100%, 100% 50%, 85% 50%, 80% 30%, 60% 5%, 40% 5%, 20% 30%, 15% 50%); }
+                        2% { transform: rotate(30deg); clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%); }
+                        6% { transform: rotate(-28deg); clip-path: polygon(0 50%, 0 100%, 100% 100%, 100% 50%, 85% 50%, 80% 30%, 60% 5%, 40% 5%, 20% 30%, 15% 50%); }
+                        10% { transform: rotate(34deg); clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%); }
+                        14% { transform: rotate(-32deg); clip-path: polygon(0 50%, 0 100%, 100% 100%, 100% 50%, 85% 50%, 80% 30%, 60% 5%, 40% 5%, 20% 30%, 15% 50%); }
+                        18% { transform: rotate(30deg); clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%); }
+                        22% { transform: rotate(-28deg); clip-path: polygon(0 50%, 0 100%, 100% 100%, 100% 50%, 85% 50%, 80% 30%, 60% 5%, 40% 5%, 20% 30%, 15% 50%); }
+                        26% { transform: rotate(26deg); clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%); }
+                        30% { transform: rotate(-24deg); clip-path: polygon(0 50%, 0 100%, 100% 100%, 100% 50%, 85% 50%, 80% 30%, 60% 5%, 40% 5%, 20% 30%, 15% 50%); }
+                        34% { transform: rotate(22deg); clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%); }
+                        38% { transform: rotate(-20deg); clip-path: polygon(0 50%, 0 100%, 100% 100%, 100% 50%, 85% 50%, 80% 30%, 60% 5%, 40% 5%, 20% 30%, 15% 50%); }
+                        42% { transform: rotate(18deg); clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%); }
+                        46% { transform: rotate(-16deg); clip-path: polygon(0 50%, 0 100%, 100% 100%, 100% 50%, 85% 50%, 80% 30%, 60% 5%, 40% 5%, 20% 30%, 15% 50%); }
+                        50% { transform: rotate(14deg); clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%); }
+                        54% { transform: rotate(-12deg); clip-path: polygon(0 50%, 0 100%, 100% 100%, 100% 50%, 85% 50%, 80% 30%, 60% 5%, 40% 5%, 20% 30%, 15% 50%); }
+                        58% { transform: rotate(10deg); clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%); }
+                        62% { transform: rotate(-8deg); clip-path: polygon(0 50%, 0 100%, 100% 100%, 100% 50%, 85% 50%, 80% 30%, 60% 5%, 40% 5%, 20% 30%, 15% 50%); }
+                        66% { transform: rotate(6deg); }
+                        70% { transform: rotate(-4deg); }
+                        74% { transform: rotate(2deg); }
+                        78% { transform: rotate(-1deg); }
+                        82% { transform: rotate(1deg); }
+                        86% { transform: rotate(0); }
+                        100% { transform: rotate(0); clip-path: polygon(0 50%, 0 100%, 100% 100%, 100% 50%, 85% 50%, 80% 30%, 60% 5%, 40% 5%, 20% 30%, 15% 50%); }
+                      }
+              - type: custom:mushroom-template-card
+                icon: mdi:alarm
+                icon_color: red
+                primary: Alarm
+                card_mod:
+                  style:
+                    mushroom-shape-icon$: |
+                      ha-icon {
+                        --icon-animation: alarm 0.8s ease infinite;
+                      }
+                      @keyframes alarm {
+                        0%, 80%, 100% { transform: translateY(0); }
+                        10% { transform: translateY(-2px) rotate(-27deg); }
+                        20% { transform: translateY(-2px) rotate(21deg); }
+                        30% { transform: translateY(-2px) rotate(-15deg); }
+                        40% { transform: translateY(-2px) rotate(9deg); }
+                        50% { transform: translateY(0); }
+                        60% { transform: translateY(-1.2px) }
+                      }
+              - type: custom:mushroom-template-card
+                icon: mdi:rocket-launch
+                icon_color: deep-orange
+                primary: Rocket Man
+                card_mod:
+                  style:
+                    mushroom-shape-icon$: |
+                      ha-icon {
+                        --icon-animation: thrust 100ms infinite, motion 3s ease-in-out infinite;
+                      }
+                      @keyframes thrust {
+                        0% { clip-path: polygon(0 0, 0 47%, 22% 57%, 28% 63%, 0 91%, 11% 100%, 37% 73%, 45% 77%, 55% 100%, 100% 100%, 100% 0%); }
+                        33% { clip-path: polygon(0 0, 0 47%, 24% 59%, 42% 76%, 54% 100%, 100% 100%, 100% 0); }
+                        66% { clip-path: polygon(0 0, 0 92%, 28% 64%, 36% 72%, 9% 100%, 100% 100%, 100% 0%); }
+                      }
+                      @keyframes motion {
+                        0%, 100% { transform: translateY(-2px) translateX(-3px); }
+                        50% { transform: translateY(3px) translateX(2px); }
+                      }
+              - type: custom:mushroom-template-card
+                primary: Fountain
+                icon: mdi:fountain
+                icon_color: light-blue
+                card_mod:
+                  style:
+                    mushroom-shape-icon$: |
+                      ha-icon {
+                        --icon-animation: fountain 1.5s ease infinite;
+                      }
+                      @keyframes fountain {
+                        0%, 100 { clip-path: polygon(0 100%, 0 0, 100% 0, 100% 100%); }
+                        50% { clip-path: polygon(0 100%, 0 47%, 100% 47%, 100% 100%); }
+                        60% { clip-path: polygon(0 100%, 100% 100%, 100% 37%, 79% 36%, 71% 21%, 56% 25%, 44% 25%, 31% 20%, 20% 36%, 0 36%); }
+                        70% { clip-path: polygon(0 100%, 100% 100%, 100% 36%, 79% 36%, 71% 22%, 81% 1%, 24% 0, 31% 21%, 20% 36%, 0 36%); }
+                        80% { clip-path: polygon(0 100%, 100% 100%, 100% 36%, 79% 36%, 76% 28%, 100% 0, 0 0, 23% 28%, 20% 36%, 0 36%); }
+                      }
+              - type: custom:mushroom-template-card
+                icon: mdi:motion-sensor
+                icon_color: blue
+                primary: Motion
+                card_mod:
+                  style:
+                    mushroom-shape-icon$: |
+                      ha-icon {
+                        --icon-animation: clip 2s linear infinite;
+                      }
+                      @keyframes clip {
+                        50% { clip-path: polygon(0 0, 55% 0, 100% 100%, 0 100%); }
+                      }
+                      .shape {
+                        --shape-animation: motion 2s linear infinite;
+                      }
+                      @keyframes motion {
+                        0%, 100% { --shape-color: rgba(var(--rgb-blue), 0.3); }
+                        50% { --shape-color: rgba(var(--rgb-blue), 0.2); }
+                      }
+              - type: custom:mushroom-template-card
+                primary: Cog
+                icon: mdi:cog
+                icon_color: grey
+                card_mod:
+                  style:
+                    mushroom-shape-icon$: |
+                      ha-icon {
+                        --icon-animation: spin 1.5s steps(5) infinite;
+                      }
+              - type: custom:mushroom-template-card
+                icon: mdi:wifi
+                icon_color: green
+                primary: Signal
+                card_mod:
+                  style:
+                    mushroom-shape-icon$: |
+                      ha-icon {
+                        --icon-animation: clip 2s steps(1) infinite;
+                      }
+                      @keyframes clip {
+                        0% { clip-path: circle(0% at 50% 85%); }
+                        20% { clip-path: circle(30% at 50% 85%); }
+                        40% { clip-path: circle(55% at 50% 85%); }
+                        60% { clip-path: circle(80% at 50% 85%); }
+                      }
+                      .shape {
+                        --shape-animation: ping 2s infinite;
+                      }
+                      @keyframes ping {
+                        60% { box-shadow: 0 0 0 0 rgba(var(--rgb-green), 0.7); }
+                        100% { box-shadow: 0 0 5px 15px transparent; }
+                      }
+              - type: custom:mushroom-template-card
+                icon: mdi:alarm-light
+                icon_color: red
+                primary: Alert
+                card_mod:
+                  style:
+                    mushroom-shape-icon$: |
+                      ha-icon {
+                        --icon-animation: alert 0.8s infinite;
+                      }
+                      @keyframes alert {
+                        0%, 100% { color: rgb(var(--rgb-orange)); }
+                        50% { clip-path: polygon(0% 55%, 25% 55%, 25% 35%, 35% 25%, 50% 18%, 65% 20%, 75% 35%, 75% 55%, 100% 55%, 100% 100%, 0 100%); color: rgb(var(--rgb-red)); }
+                      }
+                      .shape {
+                        --shape-animation: alert-shape 0.8s infinite;
+                      }
+                      @keyframes alert-shape {
+                        0%, 100% { --shape-color: rgba(var(--rgb-orange), 0.2); }
+                        60% { --shape-color: rgba(var(--rgb-red), 0.2); }
+                      }
+              - type: custom:mushroom-template-card
+                icon: mdi:console-line
+                icon_color: grey
+                primary: Console
+                card_mod:
+                  style:
+                    mushroom-shape-icon$: |
+                      ha-icon {
+                        --icon-animation: console 1s infinite;
+                      }
+                      @keyframes console {
+                        50% { clip-path: polygon(0 0, 100% 0, 24% 100%, 0 100%); } 
+                      }
+              - type: custom:mushroom-template-card
+                icon: mdi:dialpad
+                icon_color: blue
+                primary: Keypad
+                card_mod:
+                  style:
+                    mushroom-shape-icon$: |
+                      ha-icon {
+                        --icon-animation: pin 4s infinite;
+                        transform-origin: 50% 75%;
+                      }
+                      @keyframes pin {
+                        0%, 15%, 25%, 35%, 45%, 55% { clip-path: inset(0 0 0 0); }
+                        10% { clip-path: polygon(0% 100%, 1% 23%, 36% 23%, 36% 0%, 100% 0, 100% 100%); } 
+                        20% { clip-path: polygon(0% 100%, 0 0, 62% 0, 61% 25%, 100% 24%, 100% 100%); } 
+                        30% { clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%, 0 25%, 36% 25%, 37% 50%, 63% 49%, 62% 26%, 0 25%); } 
+                        40% { clip-path: polygon(0 51%, 0 0, 100% 0, 100% 100%, 36% 100%, 37% 51%); } 
+                        50% { clip-path: polygon(0 100%, 0 0, 100% 0, 100% 50%, 64% 50%, 64% 100%); } 
+                      } 
+                      .shape {
+                        --shape-animation: ping 4s infinite;
+                      }
+                      @keyframes ping {
+                        55% { box-shadow: 0 0 1px 0px rgba(var(--rgb-blue), 0.3) inset; }
+                        100% { box-shadow: 0 0 5px 15px transparent inset; }
+                      }
+              - type: custom:mushroom-template-card
+                icon: mdi:eye
+                icon_color: blue
+                primary: Eye
+                card_mod:
+                  style:
+                    mushroom-shape-icon$: |
+                      ha-icon {
+                        --icon-animation: wink 4s ease-in-out infinite;
+                      }
+                      @keyframes wink {
+                        0%, 100% { transform: scale(1, 1); }
+                        19% { transform: scale(1.05, 0.6); }
+                        20% { clip-path: polygon(0 100%, 100% 100%, 100% 49%, 86% 51%, 79% 59%, 70% 66%, 57% 71%, 43% 71%, 29% 65%, 21% 57%, 13% 49%, 0 49%); }
+                        25% { transform: scale(1, 1); }
+                        28% { transform: scale(0.95, 1.05); }
+                        30% { clip-path: inset(0 0 0 0); }
+                      }
+              - type: custom:mushroom-template-card
+                icon: mdi:cctv
+                icon_color: deep-purple
+                primary: 'Camera #1'
+                card_mod:
+                  style:
+                    mushroom-shape-icon$: |
+                      ha-icon {
+                        --icon-animation: flip 8s ease-in-out infinite alternate;
+                      }
+                      @keyframes flip {
+                        50% { transform: rotateY(180deg); }
+                      }
+              - type: custom:mushroom-template-card
+                primary: 'Camera #2'
+                icon: mdi:cctv
+                icon_color: deep-purple
+                card_mod:
+                  style:
+                    mushroom-shape-icon$: |
+                      ha-icon {
+                        --icon-animation: scan 5s ease-in-out infinite;
+                        transform-origin: 90% 80%
+                      }
+                      @keyframes scan {
+                        0%, 100% { transform: rotate(20deg); }
+                        50% { transform: rotate(-15deg); }
+                      }
+              - type: custom:mushroom-template-card
+                icon: mdi:battery
+                icon_color: green
+                primary: 'Battery #1'
+                card_mod:
+                  style:
+                    mushroom-shape-icon$: |
+                      ha-icon {
+                        --icon-animation: charge 3s linear infinite;
+                      }
+                      @keyframes charge {
+                        0%, 80% { clip-path: inset(0 0 0 0); }
+                        10% { clip-path: polygon(0% 0%, 0% 100%, 34% 100%, 34% 24%, 67% 24%, 67% 84%, 34% 84%, 34% 100%, 100% 100%, 100% 0%); }
+                        20% { clip-path: polygon(0% 0%, 0% 100%, 34% 100%, 34% 24%, 67% 24%, 67% 74%, 34% 74%, 34% 100%, 100% 100%, 100% 0%); }
+                        30% { clip-path: polygon(0% 0%, 0% 100%, 34% 100%, 34% 24%, 67% 24%, 67% 64%, 34% 64%, 34% 100%, 100% 100%, 100% 0%); }
+                        40% { clip-path: polygon(0% 0%, 0% 100%, 34% 100%, 34% 24%, 67% 24%, 67% 54%, 34% 54%, 34% 100%, 100% 100%, 100% 0%); }
+                        50% { clip-path: polygon(0% 0%, 0% 100%, 34% 100%, 34% 24%, 67% 24%, 67% 44%, 34% 44%, 34% 100%, 100% 100%, 100% 0%); }
+                        60% { clip-path: polygon(0% 0%, 0% 100%, 34% 100%, 34% 24%, 67% 24%, 67% 34%, 34% 34%, 34% 100%, 100% 100%, 100% 0%); }
+                        70% { clip-path: polygon(0% 0%, 0% 100%, 34% 100%, 34% 24%, 67% 24%, 67% 24%, 34% 24%, 34% 100%, 100% 100%, 100% 0%); }
+                      }
+              - type: custom:mushroom-template-card
+                icon: mdi:battery-high
+                icon_color: green
+                primary: 'Battery #2'
+                card_mod:
+                  style:
+                    mushroom-shape-icon$: |
+                      ha-icon {
+                        --icon-animation: charge 3s steps(1) infinite;
+                      }
+                      @keyframes charge {
+                        0% { clip-path: polygon(0% 0%, 0% 100%, 34% 100%, 34% 24%, 67% 24%, 67% 84%, 34% 84%, 34% 100%, 100% 100%, 100% 0%); }
+                        20% { clip-path: polygon(0% 0%, 0% 100%, 34% 100%, 34% 24%, 67% 24%, 67% 64%, 34% 64%, 34% 100%, 100% 100%, 100% 0%); }
+                        40% { clip-path: polygon(0% 0%, 0% 100%, 34% 100%, 34% 24%, 67% 24%, 67% 44%, 34% 44%, 34% 100%, 100% 100%, 100% 0%); }
+                        60% { clip-path: polygon(0% 0%, 0% 100%, 34% 100%, 34% 24%, 67% 24%, 67% 24%, 34% 24%, 34% 100%, 100% 100%, 100% 0%); }
+                      }
+              - type: custom:mushroom-template-card
+                primary: Wrench
+                icon: mdi:wrench
+                icon_color: grey
+                card_mod:
+                  style:
+                    mushroom-shape-icon$: |
+                      ha-icon {
+                        --icon-animation: tighten 1.5s ease-in-out infinite;
+                        transform-origin: 31% 31%
+                      }
+                      @keyframes tighten {
+                        0%, 100% { transform: rotate(-20deg); }
+                        80% { transform: rotate(15deg); }
+                      }
+  - theme: Backend-selected
+    title: animations 02
+    path: animations-02
+    badges: []
+    cards:
+      - type: vertical-stack
+        cards:
+          - type: custom:stack-in-card
+            cards:
+              - type: custom:layout-card
+                layout_type: custom:grid-layout
+                tap_action: none
+                layout:
+                  grid-template-columns: 60px auto 12px
+                  margin: '-4px -4px -8px -4px;'
+                cards:
+                  - type: custom:mushroom-template-card
+                    icon: mdi:source-branch
+                    title: Source
+                    icon_color: blue
+                    card_mod:
+                      style: |
+                        ha-card {
+                          background: none;
+                          --ha-card-box-shadow: 0px;
+                        }
+                  - type: custom:mushroom-template-card
+                    entity: input_boolean.dropdown
+                    icon: mdi:chevron-down
+                    icon_color: disabled
+                    hold_action:
+                      action: none
+                    card_mod:
+                      style:
+                        mushroom-shape-icon:
+                          $: |
+                            .shape ha-icon {
+                              transition: transform 0.14s !important;
+                              {{ 'transform: rotate(-180deg);' if is_state(config.entity, 'on') }}
+                            }
+                          .: |
+                            ha-card {
+                              align-items: flex-end;
+                              box-shadow: none;
+                            }
+                            mushroom-shape-icon {
+                              --shape-color: none !important;
+                            }
+              - type: custom:stack-in-card
+                mode: horizontal
+                cards:
+                  - type: custom:mushroom-template-card
+                    primary: GitHub
+                    secondary: ''
+                    icon: mdi:github
+                    icon_color: 'off'
+                    layout: vertical
+                    primary_info: null
+                    tap_action:
+                      action: url
+                      url_path: >-
+                        https://github.com/Dodoooh/awesome-mushroom-cards/tree/main/mushroom-cards/10_Animations#animation-02
+                    card_mod:
+                      style: |
+                        ha-card { 
+                          width: 130px;
+                          margin-left: auto;
+                          margin-right: auto;
+                        } 
+                  - type: custom:mushroom-template-card
+                    primary: Community
+                    secondary: '@rhysb'
+                    icon: mdi:comment
+                    icon_color: blue
+                    layout: vertical
+                    primary_info: null
+                    tap_action:
+                      action: url
+                      url_path: >-
+                        https://community.home-assistant.io/t/mushroom-cards-build-a-beautiful-dashboard-easily/388590/3256?u=d0doooh
+                    card_mod:
+                      style: |
+                        ha-card { 
+                          width: 130px;
+                          margin-left: auto;
+                          margin-right: auto;
+                        } 
+                  - type: custom:mushroom-template-card
+                    primary: Version
+                    secondary: '1.0'
+                    icon: mdi:alpha-i
+                    icon_color: grey
+                    layout: vertical
+                    primary_info: null
+                    tap_action: none
+                    card_mod:
+                      style: |
+                        ha-card { 
+                          width: 130px;
+                          margin-left: auto;
+                          margin-right: auto;
+                        } 
+            card_mod:
+              style: |
+                ha-card {
+                  {{ 'height: 66px;' if is_state('input_boolean.dropdown', 'off') }}
+                }
+          - type: vertical-stack
+            cards:
+              - type: custom:mod-card
+                card:
+                  type: custom:mushroom-title-card
+                  title: Mushroom.
+                  subtitle: Typewriter
+                card_mod:
+                  style:
+                    mushroom-title-card$: |
+                      h1 {
+                        width: 9ch;
+                        animation: typing 5s steps(9), cursor 0.25s step-end 30 alternate;
+                        overflow: hidden;
+                        border-right: 2px solid transparent;
+                        font-family: monospace;
+                      }
+                       @keyframes typing {
+                        0% { width: 0; }
+                      }
+                      @keyframes cursor {
+                        50% { border-color: var(--primary-text-color); }
+                      }
+              - type: custom:mod-card
+                card:
+                  type: custom:mushroom-title-card
+                  title: Mushroom 🍄
+                  subtitle: Scale-in
+                card_mod:
+                  style:
+                    mushroom-title-card$: |
+                      * {
+                          animation: scale-in 1s;
+                          transform-origin: 15%;
+                      }
+                      @keyframes scale-in {
+                        0% { transform: scale(0); opacity: 0; }
+                        100% { transform: scale(1); opacity: 1; }
+                      }
+              - type: custom:mod-card
+                card:
+                  type: custom:mushroom-title-card
+                  title: Mushroom 🍄
+                  subtitle: Fade-in
+                card_mod:
+                  style:
+                    mushroom-title-card$: |
+                      * {
+                        animation: fade 1s ease-in;
+                      }
+                      @keyframes fade {
+                        0% { opacity: 0; }
+                        100% { opacity: 1; }
+                      }
+              - type: custom:mod-card
+                card:
+                  type: custom:mushroom-title-card
+                  title: Mushroom 🍄
+                  subtitle: Focus
+                card_mod:
+                  style:
+                    mushroom-title-card$: |
+                      * {
+                        animation: focus 1.5s;
+                      }
+                      @keyframes focus {
+                        0% { filter: blur(10px); opacity: 0; }
+                      }
+              - type: custom:mod-card
+                card:
+                  type: custom:mushroom-title-card
+                  title: Mushroom 🍄
+                  subtitle: Drop-in
+                card_mod:
+                  style:
+                    mushroom-title-card$: |
+                      * {
+                        animation: drop-in 1.1s both;
+                      }
+                      @keyframes drop-in {
+                        0% { transform: translateY(-400px); animation-timing-function: ease-in; filter: blur(40px); opacity: 0; }
+                        38% { transform: translateY(0); animation-timing-function: ease-out; filter: blur(0); opacity: 1; }
+                        55% { transform: translateY(-16px); animation-timing-function: ease-in; }
+                        72% { transform: translateY(0); animation-timing-function: ease-out; }
+                        81% { transform: translateY(-7px); animation-timing-function: ease-in; }
+                        90% { transform: translateY(0); animation-timing-function: ease-out; }
+                        95% { transform: translateY(-2px); animation-timing-function: ease-in; }
+                        100% { transform: translateY(0); animation-timing-function: ease-out; }
+                      }
+              - type: custom:mod-card
+                card:
+                  type: custom:mushroom-title-card
+                  title: Mushroom 🍄
+                  subtitle: Slide-in
+                card_mod:
+                  style:
+                    mushroom-title-card$: |
+                      * {
+                        animation: slide-in 1.1s both;
+                      }
+                      @keyframes slide-in {
+                        0% { transform: translateX(600px) scaleX(2.5) scaleY(0.2); animation-timing-function: ease-in; filter: blur(40px); opacity: 0; }
+                        38% { transform: translateX(0) scaleY(1) scaleX(1); animation-timing-function: ease-out; filter: blur(0); opacity: 1; }
+                        55% { transform: translateX(68px) scaleY(1.1) scaleX(0.95); animation-timing-function: ease-in; }
+                        72% { transform: translateX(0) scaleY(1) scaleX(1); animation-timing-function: ease-out; }
+                        81% { transform: translateX(32px) scaleY(1.05) scaleX(0.98); animation-timing-function: ease-in; }
+                        90% { transform: translateX(0) scaleY(1) scaleX(1); animation-timing-function: ease-out; }
+                        95% { transform: translateX(8px); animation-timing-function: ease-in; }
+                        100% { transform: translateX(0); animation-timing-function: ease-out; }
+                      }
+              - type: custom:mod-card
+                card:
+                  type: custom:mushroom-title-card
+                  title: Mushroom 🍄
+                  subtitle: Flicker
+                card_mod:
+                  style:
+                    mushroom-title-card$: |
+                      * {
+                        animation: flicker 1.1s both;
+                      }
+                      @keyframes flicker {
+                        0%, 10%, 10.2%, 20%, 20.6%, 30%, 30.6%, 45%, 55.1%, 57%, 60.1%, 65%, 75.1%, 77%, 85.1%, 86% { opacity: 0; }
+                        10.1%, 20.1%, 30.1%, 30.5%, 45.1%, 50%, 55%, 57.1%, 60%, 65.1%, 75%, 77.1%, 85%, 86.1%, 100% { opacity: 1; }
+                      }
+      - type: vertical-stack
+        cards:
+          - type: custom:stack-in-card
+            cards:
+              - type: custom:layout-card
+                layout_type: custom:grid-layout
+                tap_action: none
+                layout:
+                  grid-template-columns: 60px auto 12px
+                  margin: '-4px -4px -8px -4px;'
+                cards:
+                  - type: custom:mushroom-template-card
+                    icon: mdi:source-branch
+                    title: Source
+                    icon_color: blue
+                    card_mod:
+                      style: |
+                        ha-card {
+                          background: none;
+                          --ha-card-box-shadow: 0px;
+                        }
+                  - type: custom:mushroom-template-card
+                    entity: input_boolean.dropdown
+                    icon: mdi:chevron-down
+                    icon_color: disabled
+                    hold_action:
+                      action: none
+                    card_mod:
+                      style:
+                        mushroom-shape-icon:
+                          $: |
+                            .shape ha-icon {
+                              transition: transform 0.14s !important;
+                              {{ 'transform: rotate(-180deg);' if is_state(config.entity, 'on') }}
+                            }
+                          .: |
+                            ha-card {
+                              align-items: flex-end;
+                              box-shadow: none;
+                            }
+                            mushroom-shape-icon {
+                              --shape-color: none !important;
+                            }
+              - type: custom:stack-in-card
+                mode: horizontal
+                cards:
+                  - type: custom:mushroom-template-card
+                    primary: GitHub
+                    secondary: ''
+                    icon: mdi:github
+                    icon_color: 'off'
+                    layout: vertical
+                    primary_info: null
+                    tap_action:
+                      action: url
+                      url_path: >-
+                        https://github.com/Dodoooh/awesome-mushroom-cards/tree/main/mushroom-cards/10_Animations#animation-02
+                    card_mod:
+                      style: |
+                        ha-card { 
+                          width: 130px;
+                          margin-left: auto;
+                          margin-right: auto;
+                        } 
+                  - type: custom:mushroom-template-card
+                    primary: Community
+                    secondary: '@rhysb'
+                    icon: mdi:comment
+                    icon_color: blue
+                    layout: vertical
+                    primary_info: null
+                    tap_action:
+                      action: url
+                      url_path: >-
+                        https://community.home-assistant.io/t/mushroom-cards-build-a-beautiful-dashboard-easily/388590/3256?u=d0doooh
+                    card_mod:
+                      style: |
+                        ha-card { 
+                          width: 130px;
+                          margin-left: auto;
+                          margin-right: auto;
+                        } 
+                  - type: custom:mushroom-template-card
+                    primary: Version
+                    secondary: '1.0'
+                    icon: mdi:alpha-i
+                    icon_color: grey
+                    layout: vertical
+                    primary_info: null
+                    tap_action: none
+                    card_mod:
+                      style: |
+                        ha-card { 
+                          width: 130px;
+                          margin-left: auto;
+                          margin-right: auto;
+                        } 
+            card_mod:
+              style: |
+                ha-card {
+                  {{ 'height: 66px;' if is_state('input_boolean.dropdown', 'off') }}
+                }
+          - type: vertical-stack
+            cards:
+              - type: custom:mushroom-template-card
+                icon: none
+                primary: Comet
+                icon_color: ''
+                card_mod:
+                  style:
+                    mushroom-shape-icon$: |
+                      .shape {
+                        border-right: 4px solid;
+                        border-bottom: 4px solid transparent;
+                        --shape-animation: spin 1s linear infinite, comet 10s infinite;
+                        --shape-color: none;
+                        --icon-size: 38px;
+                      }
+                      @keyframes comet {
+                        0% { border-right-color: rgb(var(--rgb-red)); }
+                        6.25% { border-right-color: rgb(var(--rgb-deep-orange)); }
+                        12.5% { border-right-color: rgb(var(--rgb-orange)); }
+                        18.75% { border-right-color: rgb(var(--rgb-amber)); }
+                        25% { border-right-color: rgb(var(--rgb-yellow)); }
+                        31.25% { border-right-color: rgb(var(--rgb-lime)); }
+                        37.5% { border-right-color: rgb(var(--rgb-light-green)); }
+                        43.75% { border-right-color: rgb(var(--rgb-green)); }
+                        50% { border-right-color: rgb(var(--rgb-teal)); }
+                        56.25% { border-right-color: rgb(var(--rgb-cyan)); }
+                        62.5% { border-right-color: rgb(var(--rgb-light-blue)); }
+                        68.75% { border-right-color: rgb(var(--rgb-blue)); }
+                        75% { border-right-color: rgb(var(--rgb-indigo)); }
+                        81.25% { border-right-color: rgb(var(--rgb-deep-purple)); }
+                        87.5% { border-right-color: rgb(var(--rgb-purple)); }
+                        93.75% { border-right-color: rgb(var(--rgb-pink)); }
+                        100% { border-right-color: rgb(var(--rgb-red)); }
+                      }
+              - type: custom:mushroom-template-card
+                icon: none
+                primary: Crescent
+                icon_color: ''
+                card_mod:
+                  style:
+                    mushroom-shape-icon$: |
+                      .shape {
+                        border: 1px solid rgba(var(--rgb-disabled), 0.8);
+                        border-right: 3px solid rgba(var(--rgb-light-blue));
+                        --shape-animation: spin 1s linear infinite;
+                        --shape-color: none;
+                        --icon-size: 40px;
+                      }
+              - type: custom:mushroom-template-card
+                icon: none
+                primary: Munch
+                icon_color: ''
+                card_mod:
+                  style:
+                    mushroom-shape-icon$: |
+                      ha-icon, .shape {
+                        --icon-animation: spin 1.5s linear infinite reverse;
+                        --shape-animation: spin 2s linear infinite;
+                        border-radius: 50%;
+                        border: 4px solid transparent;
+                        border-right-color: rgb(var(--rgb-amber));
+                        border-top-color: rgb(var(--rgb-amber));
+                        --shape-color: none;
+                        --icon-symbol-size: 34px;
+                        --icon-size: 34px;
+                      }
+              - type: custom:mushroom-template-card
+                icon: none
+                primary: Double
+                icon_color: ''
+                card_mod:
+                  style:
+                    mushroom-shape-icon$: |
+                      ha-icon {
+                        --icon-animation: spin 1s linear infinite reverse;
+                        border-radius: 50%;
+                        border: 4px double transparent;
+                        border-right-color: rgb(var(--rgb-deep-orange));
+                        border-top-color: rgb(var(--rgb-deep-orange));
+                      }
+                      .shape {
+                        border: 4px double transparent;
+                        border-left-color: rgb(var(--rgb-amber));
+                        border-bottom-color: rgb(var(--rgb-amber));
+                        --shape-animation: spin 2s linear infinite;
+                        --shape-color: none;
+                        --icon-symbol-size: 20px;
+                        --icon-size: 34px;
+                      }
+              - type: custom:mushroom-template-card
+                icon: none
+                primary: St. Nick
+                icon_color: ''
+                card_mod:
+                  style:
+                    mushroom-shape-icon$: |
+                      ha-icon {
+                        --icon-animation: spin 0.5s linear infinite reverse;
+                        border-radius: 50%;
+                        border: 8px dotted rgb(var(--rgb-red));
+                      }
+                      .shape {
+                        border: 4px dashed rgb(var(--rgb-green));
+                        --shape-animation: spin 2s linear infinite;
+                        --shape-color: none;
+                        --icon-symbol-size: 5px;
+                        --icon-size: 34px;
+                      }
+              - type: custom:mushroom-template-card
+                icon: none
+                primary: Dots
+                card_mod:
+                  style:
+                    mushroom-shape-icon$: |
+                      .shape {
+                          border: 4px dotted transparent;
+                          --shape-animation: spin 800ms ease-in-out infinite, color 10s infinite;
+                          --shape-color: none;
+                          --icon-size: 34px;
+                      }
+                      @keyframes color {
+                        0% { border-right-color: rgb(var(--rgb-red)); border-top-color: rgb(var(--rgb-red)); }
+                        6.25% { border-right-color: rgb(var(--rgb-deep-orange)); border-top-color: rgb(var(--rgb-deep-orange)); }
+                        12.5% { border-right-color: rgb(var(--rgb-orange)); border-top-color: rgb(var(--rgb-orange)); }
+                        18.75% { border-right-color: rgb(var(--rgb-amber)); border-top-color: rgb(var(--rgb-amber)); }
+                        25% { border-right-color: rgb(var(--rgb-yellow)); border-top-color: rgb(var(--rgb-yellow)); }
+                        31.25% { border-right-color: rgb(var(--rgb-lime)); border-top-color: rgb(var(--rgb-lime)); }
+                        37.5% { border-right-color: rgb(var(--rgb-light-green)); border-top-color: rgb(var(--rgb-light-green)); }
+                        43.75% { border-right-color: rgb(var(--rgb-green)); border-top-color: rgb(var(--rgb-green)); }
+                        50% { border-right-color: rgb(var(--rgb-teal)); border-top-color: rgb(var(--rgb-teal)); }
+                        56.25% { border-right-color: rgb(var(--rgb-cyan)); border-top-color: rgb(var(--rgb-cyan)); }
+                        62.5% { border-right-color: rgb(var(--rgb-light-blue)); border-top-color: rgb(var(--rgb-light-blue)); }
+                        68.75% { border-right-color: rgb(var(--rgb-blue)); border-top-color: rgb(var(--rgb-blue)); }
+                        75% { border-right-color: rgb(var(--rgb-indigo)); border-top-color: rgb(var(--rgb-indigo)); }
+                        81.25% { border-right-color: rgb(var(--rgb-deep-purple)); border-top-color: rgb(var(--rgb-deep-purple)); }
+                        87.5% { border-right-color: rgb(var(--rgb-purple)); border-top-color: rgb(var(--rgb-purple)); }
+                        93.75% { border-right-color: rgb(var(--rgb-pink)); border-top-color: rgb(var(--rgb-pink)); }
+                        100% { border-right-color: rgb(var(--rgb-red)); border-top-color: rgb(var(--rgb-red)); }
+                      }
+              - type: custom:mushroom-template-card
+                icon: none
+                primary: Radial
+                icon_color: ''
+                card_mod:
+                  style:
+                    mushroom-shape-icon$: |
+                      ha-icon {
+                        --icon-animation: spin 1.5s linear infinite;
+                        border-radius: 50%;
+                        border: 3px solid rgb(var(--rgb-blue));
+                        border-right-color: transparent;
+                      }
+                      .shape {
+                        border: 3px solid rgb(var(--rgb-red));
+                        border-right-color: transparent;
+                        --shape-animation: spin 2s linear infinite;
+                        --shape-color: none;
+                        --icon-symbol-size: 24px;
+                        --icon-size: 36px;
+                      }
+              - type: custom:mushroom-template-card
+                icon: none
+                primary: Dual
+                icon_color: ''
+                card_mod:
+                  style:
+                    mushroom-shape-icon$: |
+                      .shape {
+                        --shape-animation: spin 1s ease infinite;
+                        border: 4px solid transparent;
+                        border-top-color: rgb(var(--rgb-deep-orange));
+                        border-bottom-color: rgb(var(--rgb-deep-orange));
+                        --shape-color: none !important;
+                        --icon-size: 34px;
+                      }
+              - type: custom:mushroom-template-card
+                icon: none
+                primary: Morse
+                icon_color: ''
+                card_mod:
+                  style:
+                    mushroom-shape-icon$: |
+                      ha-icon {
+                        --icon-animation: spin 1s linear infinite reverse;
+                        border-radius: 50%;
+                        border: 4px dashed transparent;
+                        border-right-color: rgb(var(--rgb-pink));
+                        border-left-color: rgb(var(--rgb-pink));
+                      }
+                      .shape {
+                        border: 4px dashed transparent;
+                        border-right-color: rgb(var(--rgb-purple));
+                        border-left-color: rgb(var(--rgb-purple));
+                        --shape-animation: spin 2s linear infinite;
+                        --shape-color: none;
+                        --icon-symbol-size: 20px;
+                        --icon-size: 34px;
+                      }
+              - type: custom:mushroom-template-card
+                icon: none
+                primary: Fade
+                card_mod:
+                  style:
+                    mushroom-shape-icon$: |
+                      .shape {
+                        --shape-animation: fade 25s linear infinite reverse;
+                        --shape-color: none;
+                      }
+                      @keyframes fade {
+                        6.24%, 12.49%, 18.74%, 24.99%, 31.24%, 37.49%, 43.74%, 49.99%, 56.24%, 62.49%, 68.74%, 74.99%, 81.24%, 87.49%, 93.74%, 100%  { box-shadow: 0 0 20px 20px transparent inset; }
+                        0% { box-shadow: 0 0 0 0 rgba(var(--rgb-red), 0.7) inset; }
+                        6.25% { box-shadow: 0 0 0 0 rgba(var(--rgb-deep-orange), 0.7) inset; }
+                        12.5% { box-shadow: 0 0 0 0 rgba(var(--rgb-orange), 0.7) inset; }
+                        18.75% { box-shadow: 0 0 0 0 rgba(var(--rgb-amber), 0.7) inset; }
+                        25% { box-shadow: 0 0 0 0 rgba(var(--rgb-yellow), 0.7) inset; }
+                        31.25% { box-shadow: 0 0 0 0 rgba(var(--rgb-lime), 0.7) inset; }
+                        37.5% { box-shadow: 0 0 0 0 rgb(var(--rgb-light-green), 0.7) inset; }
+                        43.75% { box-shadow: 0 0 0 0 rgb(var(--rgb-green), 0.7) inset; }
+                        50% { box-shadow: 0 0 0 0 rgb(var(--rgb-teal), 0.7) inset; }
+                        56.25% { box-shadow: 0 0 0 0 rgb(var(--rgb-cyan), 0.7) inset; }
+                        62.5% { box-shadow: 0 0 0 0 rgb(var(--rgb-light-blue), 0.7) inset; }
+                        68.75% { box-shadow: 0 0 0 0 rgb(var(--rgb-blue), 0.7) inset; }
+                        75% { box-shadow: 0 0 0 0 rgb(var(--rgb-indigo), 0.7) inset; }
+                        81.25% { box-shadow: 0 0 0 0 rgb(var(--rgb-deep-purple), 0.7) inset; }
+                        87.5% { box-shadow: 0 0 0 0 rgb(var(--rgb-purple), 0.7) inset; }
+                        93.75% { box-shadow: 0 0 0 0 rgb(var(--rgb-pink), 0.7) inset; }
+                      }
+              - type: custom:mushroom-template-card
+                icon: mdi:dots-circle
+                primary: Dotty
+                card_mod:
+                  style:
+                    mushroom-shape-icon$: |
+                      ha-icon {
+                        --icon-animation: spin 1s linear infinite reverse, color 60s infinite;
+                      }
+                      @keyframes color {
+                        0% { border-color: rgb(var(--rgb-red)); color: rgb(var(--rgb-red)); }
+                        6.25% { border-color: rgb(var(--rgb-deep-orange)); color: rgb(var(--rgb-pink)); }
+                        12.5% { border-color: rgb(var(--rgb-orange)); color: rgb(var(--rgb-purple)); }
+                        18.75% { border-color: rgb(var(--rgb-amber)); color: rgb(var(--rgb-deep-purple)); }
+                        25% { border-color: rgb(var(--rgb-yellow)); color: rgb(var(--rgb-indigo)); }
+                        31.25% { border-color: rgb(var(--rgb-lime)); color: rgb(var(--rgb-blue)); }
+                        37.5% { border-color: rgb(var(--rgb-light-green)); color: rgb(var(--rgb-light-blue)); }
+                        43.75% { border-color: rgb(var(--rgb-green)); color: rgb(var(--rgb-cyan)); }
+                        50% { border-color: rgb(var(--rgb-teal)); color: rgb(var(--rgb-teal)); }
+                        56.25% { border-color: rgb(var(--rgb-cyan)); color: rgb(var(--rgb-green)); }
+                        62.5% { border-color: rgb(var(--rgb-light-blue)); color: rgb(var(--rgb-light-green)); }
+                        68.75% { border-color: rgb(var(--rgb-blue)); color: rgb(var(--rgb-lime)); }
+                        75% { border-color: rgb(var(--rgb-indigo)); color: rgb(var(--rgb-yellow)); }
+                        81.25% { border-color: rgb(var(--rgb-deep-purple)); color: rgb(var(--rgb-amber)); }
+                        87.5% { border-color: rgb(var(--rgb-purple)); color: rgb(var(--rgb-orange)); }
+                        93.75% { border-color: rgb(var(--rgb-pink)); color: rgb(var(--rgb-deep-orange)); }
+                        100% { border-color: rgb(var(--rgb-red)); color: rgb(var(--rgb-red)); }
+                      }
+                      .shape {
+                        --shape-color: none;
+                        border: 5px dotted transparent;
+                        --shape-animation: spin 2s linear infinite, color 60s infinite;
+                        --icon-symbol-size: 30px;
+                        --icon-size: 32px;
+                      }
+              - type: custom:mushroom-template-card
+                icon: none
+                primary: Plain
+                card_mod:
+                  style:
+                    mushroom-shape-icon$: |
+                      .shape {
+                        border: 5px solid rgb(var(--rgb-disabled));
+                        border-left-color: transparent;
+                        --shape-animation: spin 1s linear infinite;
+                        --shape-color: none;
+                        --icon-size: 32px;
+                      }
+              - type: custom:mushroom-template-card
+                icon: none
+                primary: Toggle
+                card_mod:
+                  style:
+                    mushroom-shape-icon$: |
+                      ha-icon {
+                        --icon-animation: spin 1s linear infinite reverse;
+                        border-radius: 50%;
+                        border: 4px solid transparent;
+                        border-right-color: rgb(var(--rgb-cyan));
+                        border-left-color: rgb(var(--rgb-cyan));
+                      }
+                      .shape {
+                        border: 4px solid transparent;
+                        border-top-color: rgb(var(--rgb-cyan));
+                        border-left-color: rgb(var(--rgb-cyan));
+                        --shape-animation: spin 1s linear infinite;
+                        --shape-color: none;
+                        --icon-symbol-size: 34px;
+                        --icon-size: 34px;
+                      }
+              - type: custom:mushroom-template-card
+                icon: none
+                primary: Spheres
+                card_mod:
+                  style:
+                    mushroom-shape-icon$: |
+                      ha-icon {
+                        --icon-animation: spin 1s linear infinite reverse;
+                        border-radius: 50%;
+                        border: 12px dotted transparent;
+                        border-right-color: rgb(var(--rgb-blue));
+                        border-left-color: rgb(var(--rgb-blue));
+                      }
+                      .shape  {
+                        border: 12px dotted transparent;
+                        border-right-color: rgb(var(--rgb-red));
+                        border-left-color: rgb(var(--rgb-red));
+                        --shape-animation: spin 2s linear infinite;
+                        --shape-color: none;
+                        --icon-symbol-size: 18px;
+                        --icon-size: 18px;
+                      }
+              - type: custom:mushroom-template-card
+                icon: mdi:loading
+                icon_color: red
+                primary: Triple
+                card_mod:
+                  style:
+                    mushroom-shape-icon$: |
+                      ha-icon {
+                        --icon-animation: spin 4s linear infinite;
+                        border-radius: 50%;
+                        border: 4px solid transparent;
+                        border-bottom-color: rgb(var(--rgb-blue));
+                      }
+                      .shape {
+                        --shape-color: none !important;
+                        border: 4px solid transparent;
+                        border-bottom-color: rgb(var(--rgb-green));
+                        --shape-animation: spin 2s linear infinite;
+                        --shape-color: none;
+                        --icon-symbol-size: 42px;
+                        --icon-size: 34px;
+                      }
+      - type: vertical-stack
+        cards:
+          - type: custom:stack-in-card
+            cards:
+              - type: custom:layout-card
+                layout_type: custom:grid-layout
+                tap_action: none
+                layout:
+                  grid-template-columns: 60px auto 12px
+                  margin: '-4px -4px -8px -4px;'
+                cards:
+                  - type: custom:mushroom-template-card
+                    icon: mdi:source-branch
+                    title: Source
+                    icon_color: blue
+                    card_mod:
+                      style: |
+                        ha-card {
+                          background: none;
+                          --ha-card-box-shadow: 0px;
+                        }
+                  - type: custom:mushroom-template-card
+                    entity: input_boolean.dropdown
+                    icon: mdi:chevron-down
+                    icon_color: disabled
+                    hold_action:
+                      action: none
+                    card_mod:
+                      style:
+                        mushroom-shape-icon:
+                          $: |
+                            .shape ha-icon {
+                              transition: transform 0.14s !important;
+                              {{ 'transform: rotate(-180deg);' if is_state(config.entity, 'on') }}
+                            }
+                          .: |
+                            ha-card {
+                              align-items: flex-end;
+                              box-shadow: none;
+                            }
+                            mushroom-shape-icon {
+                              --shape-color: none !important;
+                            }
+              - type: custom:stack-in-card
+                mode: horizontal
+                cards:
+                  - type: custom:mushroom-template-card
+                    primary: GitHub
+                    secondary: ''
+                    icon: mdi:github
+                    icon_color: 'off'
+                    layout: vertical
+                    primary_info: null
+                    tap_action:
+                      action: url
+                      url_path: >-
+                        https://github.com/Dodoooh/awesome-mushroom-cards/tree/main/mushroom-cards/10_Animations#animation-02
+                    card_mod:
+                      style: |
+                        ha-card { 
+                          width: 130px;
+                          margin-left: auto;
+                          margin-right: auto;
+                        } 
+                  - type: custom:mushroom-template-card
+                    primary: Community
+                    secondary: '@rhysb'
+                    icon: mdi:comment
+                    icon_color: blue
+                    layout: vertical
+                    primary_info: null
+                    tap_action:
+                      action: url
+                      url_path: >-
+                        https://community.home-assistant.io/t/mushroom-cards-build-a-beautiful-dashboard-easily/388590/3256?u=d0doooh
+                    card_mod:
+                      style: |
+                        ha-card { 
+                          width: 130px;
+                          margin-left: auto;
+                          margin-right: auto;
+                        } 
+                  - type: custom:mushroom-template-card
+                    primary: Version
+                    secondary: '1.0'
+                    icon: mdi:alpha-i
+                    icon_color: grey
+                    layout: vertical
+                    primary_info: null
+                    tap_action: none
+                    card_mod:
+                      style: |
+                        ha-card { 
+                          width: 130px;
+                          margin-left: auto;
+                          margin-right: auto;
+                        } 
+            card_mod:
+              style: |
+                ha-card {
+                  {{ 'height: 66px;' if is_state('input_boolean.dropdown', 'off') }}
+                }
+          - type: vertical-stack
+            cards:
+              - type: custom:mushroom-template-card
+                primary: Activate Mushroom
+                icon: mdi:mushroom
+                icon_color: red
+                secondary: Background
+                tap_action:
+                  action: none
+                hold_action:
+                  action: none
+                card_mod:
+                  style: |
+                    ha-card:active {
+                      background: rgba(var(--rgb-disabled), 0.1);
+                      transition: 0s;
+                    }
+              - type: custom:mushroom-template-card
+                primary: Activate Mushroom
+                icon: mdi:mushroom
+                icon_color: red
+                secondary: Box-Shadow
+                tap_action:
+                  action: none
+                hold_action:
+                  action: none
+                card_mod:
+                  style: |
+                    ha-card:active {
+                      box-shadow: 0 0 20px rgba(var(--rgb-disabled), 0.8);
+                      transition: 0s;
+                    }
+              - type: custom:mushroom-template-card
+                primary: Activate Mushroom
+                icon: mdi:mushroom
+                icon_color: red
+                secondary: Scale-Out
+                tap_action:
+                  action: none
+                hold_action:
+                  action: none
+                card_mod:
+                  style: |
+                    ha-card:active {
+                      transform: scale(1.02);
+                      transition: 0s;
+                    }
+              - type: custom:mushroom-template-card
+                primary: Activate Mushroom
+                icon: mdi:mushroom
+                icon_color: red
+                secondary: Scale-In
+                tap_action:
+                  action: none
+                hold_action:
+                  action: none
+                card_mod:
+                  style: |
+                    ha-card:active {
+                      transform: scale(0.975);
+                      transition: 0s;
+                    }
+              - type: custom:mushroom-template-card
+                primary: Activate Mushroom
+                icon: mdi:mushroom
+                icon_color: red
+                secondary: Push Down
+                tap_action:
+                  action: none
+                hold_action:
+                  action: none
+                card_mod:
+                  style: |
+                    ha-card:active {
+                      transform: translateY(1.5px);
+                      transition: 0s;
+                      box-shadow: 0 0.5px 2px 0 rgba(0, 0, 0, 0.16);
+                    }
+              - type: custom:mushroom-template-card
+                primary: Activate Mushroom
+                icon: mdi:mushroom
+                icon_color: red
+                secondary: Push In
+                tap_action:
+                  action: none
+                hold_action:
+                  action: none
+                card_mod:
+                  style: |
+                    ha-card:active {
+                      transform: translateY(-1.5px);
+                      transition: 0s;
+                      box-shadow: 0 0.5px 2px 0 rgba(0, 0, 0, 0.16);
+                    }
+              - type: custom:mushroom-template-card
+                primary: Activate Mushroom
+                icon: mdi:mushroom
+                icon_color: red
+                secondary: Ripple
+                tap_action:
+                  action: none
+                hold_action:
+                  action: none
+                card_mod:
+                  style: |
+                    ha-card {
+                      overflow: hidden;
+                    }  
+                    ha-card:after {
+                      display: none;
+                      content: "";
+                      position: absolute;
+                      border-radius: 50%;
+                      background-color: rgba(var(--rgb-disabled), 0.1);
+                      width: 100px;
+                      height: 100px;
+                      margin-top: -50px;
+                      margin-left: -50px;
+                      top: 50%;
+                      left: 50%;
+                      animation: ripple 750ms;
+                      opacity: 0;
+                    }
+                    ha-card:active:after {
+                      display: block;
+                    }
+                    @keyframes ripple {
+                      from { opacity: 1; transform: scale(0); }
+                      to { opacity: 0; transform: scale(10); }
+                    }
+              - type: custom:mushroom-template-card
+                primary: Activate Mushroom
+                icon: mdi:mushroom
+                icon_color: red
+                secondary: 3D Perspective
+                tap_action:
+                  action: none
+                hold_action:
+                  action: none
+                card_mod:
+                  style: |
+                    :host {
+                      perspective: 900px;
+                    }
+                    ha-card:active {
+                      transform: rotateY(20deg);
+                      transition: 0s;
+                    }
+              - type: custom:mushroom-template-card
+                primary: Activate Mushroom
+                icon: mdi:mushroom
+                icon_color: red
+                secondary: 3D Tilt
+                tap_action:
+                  action: none
+                hold_action:
+                  action: none
+                card_mod:
+                  style: |
+                    :host {
+                      perspective: 1000px;
+                    }
+                    ha-card:active {
+                      transform: rotate3d(0.5, -0.9, 0, 10deg) rotate(1deg);
+                      transition: 0s;
+                    }
+              - type: custom:mushroom-template-card
+                primary: Activate Mushroom
+                icon: mdi:mushroom
+                icon_color: red
+                secondary: 3D Flap
+                tap_action:
+                  action: none
+                hold_action:
+                  action: none
+                card_mod:
+                  style: |
+                    :host {
+                      perspective: 900px;
+                    }
+                    ha-card:active {
+                      transform: rotateX(25deg);
+                      transform-origin: center bottom;
+                      transition: 0s;
+                    }
+              - type: custom:mushroom-template-card
+                primary: Activate Mushroom
+                icon: mdi:mushroom
+                icon_color: red
+                secondary: Icon Spin
+                tap_action:
+                  action: none
+                hold_action:
+                  action: none
+                card_mod:
+                  style: |
+                    ha-card:active mushroom-shape-icon { 
+                        display: flex;
+                        #--icon-animation: spin 1s;
+                        transform: rotate(360deg);
+                        transition: 500ms;
+                    }
+  - theme: Backend-selected
+    title: Animations 03
+    path: animations-03
+    badges: []
+    cards:
+      - type: vertical-stack
+        cards:
+          - type: custom:stack-in-card
+            cards:
+              - type: custom:layout-card
+                layout_type: custom:grid-layout
+                tap_action: none
+                layout:
+                  grid-template-columns: 60px auto 12px
+                  margin: '-4px -4px -8px -4px;'
+                cards:
+                  - type: custom:mushroom-template-card
+                    icon: mdi:source-branch
+                    title: Source
+                    icon_color: blue
+                    card_mod:
+                      style: |
+                        ha-card {
+                          background: none;
+                          --ha-card-box-shadow: 0px;
+                        }
+                  - type: custom:mushroom-template-card
+                    entity: input_boolean.dropdown
+                    icon: mdi:chevron-down
+                    icon_color: disabled
+                    hold_action:
+                      action: none
+                    card_mod:
+                      style:
+                        mushroom-shape-icon:
+                          $: |
+                            .shape ha-icon {
+                              transition: transform 0.14s !important;
+                              {{ 'transform: rotate(-180deg);' if is_state(config.entity, 'on') }}
+                            }
+                          .: |
+                            ha-card {
+                              align-items: flex-end;
+                              box-shadow: none;
+                            }
+                            mushroom-shape-icon {
+                              --shape-color: none !important;
+                            }
+              - type: custom:stack-in-card
+                mode: horizontal
+                cards:
+                  - type: custom:mushroom-template-card
+                    primary: GitHub
+                    secondary: ''
+                    icon: mdi:github
+                    icon_color: 'off'
+                    layout: vertical
+                    primary_info: null
+                    tap_action:
+                      action: url
+                      url_path: >-
+                        https://github.com/Dodoooh/awesome-mushroom-cards/tree/main/mushroom-cards/10_Animations#animation-03
+                    card_mod:
+                      style: |
+                        ha-card { 
+                          width: 130px;
+                          margin-left: auto;
+                          margin-right: auto;
+                        } 
+                  - type: custom:mushroom-template-card
+                    primary: Community
+                    secondary: '@rhysb'
+                    icon: mdi:comment
+                    icon_color: blue
+                    layout: vertical
+                    primary_info: null
+                    tap_action:
+                      action: url
+                      url_path: >-
+                        https://community.home-assistant.io/t/mushroom-cards-build-a-beautiful-dashboard-easily/388590/3272?u=d0doooh
+                    card_mod:
+                      style: |
+                        ha-card { 
+                          width: 130px;
+                          margin-left: auto;
+                          margin-right: auto;
+                        } 
+                  - type: custom:mushroom-template-card
+                    primary: Version
+                    secondary: '1.0'
+                    icon: mdi:alpha-i
+                    icon_color: grey
+                    layout: vertical
+                    primary_info: null
+                    tap_action: none
+                    card_mod:
+                      style: |
+                        ha-card { 
+                          width: 130px;
+                          margin-left: auto;
+                          margin-right: auto;
+                        } 
+            card_mod:
+              style: |
+                ha-card {
+                  {{ 'height: 66px;' if is_state('input_boolean.dropdown', 'off') }}
+                }
+          - type: vertical-stack
+            cards:
+              - type: custom:mushroom-template-card
+                icon: mdi:flash
+                icon_color: amber
+                primary: Flash
+                card_mod:
+                  style:
+                    mushroom-shape-icon$: |
+                      ha-icon {
+                        --icon-animation: flash 4s linear infinite;
+                      }
+                      @keyframes flash {
+                        0%, 4%, 8%, 12%, 16%, 20%, 24%, 28%, 32%, 100% { transform: translate(0px,0px); }
+                        2% { transform: translate(-0.3px, 0px); }
+                        6% { transform: translate(0.3px, 0px); }
+                        10% { transform: translate(-0.2px, 0px); }
+                        14% { transform: translate(0.2px, 0px); }
+                        18% { transform: translate(-0.2px, 0px); }
+                        22% { transform: translate(0.5px, 0px); }
+                        26% { transform: translate(-0.5px, 0px); }
+                        34% { transform: translate(-1px, 5px); --icon-color: rgb(var(--rgb-amber)); }
+                        38% { transform: translate(0px, 0px); --icon-color: rgb(var(--rgb-white)); }
+                        40% { --icon-color: rgb(var(--rgb-amber)); }
+                      }
+              - type: custom:mushroom-template-card
+                icon: mdi:lightning-bolt
+                icon_color: amber
+                primary: Charge
+                card_mod:
+                  style:
+                    mushroom-shape-icon$: |
+                      ha-icon {
+                        --icon-animation: charge 1s linear infinite;
+                      }
+                      @keyframes charge {
+                        0%, 10%, 20%, 30%, 40%, 50%, 60%, 70%, 80%, 90%, 100% { transform: translate(0, 0); }
+                        5% { transform: translate({{ range(-10, 10) | random / 10 }}px, {{ range(-10, 10) | random / 10 }}px); }
+                        15% { transform: translate({{ range(-10, 10) | random / 10 }}px, {{ range(-10, 10) | random / 10 }}px); }
+                        25% { transform: translate({{ range(-10, 10) | random / 10 }}px, {{ range(-10, 10) | random / 10 }}px); }
+                        35% { transform: translate({{ range(-10, 10) | random / 10 }}px, {{ range(-10, 10) | random / 10 }}px); }
+                        45% { transform: translate({{ range(-10, 10) | random / 10 }}px, {{ range(-10, 10) | random / 10 }}px); }
+                        55% { transform: translate({{ range(-10, 10) | random / 10 }}px, {{ range(-10, 10) | random / 10 }}px); }
+                        65% { transform: translate({{ range(-10, 10) | random / 10 }}px, {{ range(-10, 10) | random / 10 }}px); }
+                        75% { transform: translate({{ range(-10, 10) | random / 10 }}px, {{ range(-10, 10) | random / 10 }}px); }
+                        85% { transform: translate({{ range(-10, 10) | random / 10 }}px, {{ range(-10, 10) | random / 10 }}px); }
+                        95% { transform: translate({{ range(-10, 10) | random / 10 }}px, {{ range(-10, 10) | random / 10 }}px); }
+                      }
+              - type: custom:mushroom-template-card
+                icon: mdi:looks
+                primary: Double Rainbow
+                card_mod:
+                  style:
+                    mushroom-shape-icon$: |
+                      ha-icon {
+                        --icon-animation: double 3s linear infinite alternate;
+                      }
+                      @keyframes double {
+                        0% { clip-path: inset(0 98% 0 0); transform: rotateY(0deg); }
+                        12.5% { clip-path: polygon(0 22%, 0 75%, 50% 75%); }
+                        25% { clip-path: inset(0 50% 0 0); }
+                        37.5% { clip-path: polygon(0 0, 0 75%, 50% 75%, 100% 0); }
+                        50% { clip-path: inset(0 0 0 0); transform: rotateY(0deg); }
+                        50.1% { transform: rotateY(180deg); }
+                        62.5% { clip-path: polygon(0 0, 0 75%, 50% 75%, 100% 0); }
+                        75% { clip-path: inset(0 50% 0 0); }
+                        87.5% { clip-path: polygon(0 22%, 0 75%, 50% 75%); }
+                        100% { clip-path: inset(0 98% 0 0); transform: rotateY(180deg); }
+                      }
+                      .shape {
+                        --shape-animation: rainbow 40s linear infinite;
+                      }
+                      @keyframes rainbow {
+                        0%, 100% {--icon-color: rgb(var(--rgb-red)); --shape-color: rgb(var(--rgb-red), 0.2); }
+                        6.25% { --icon-color: rgb(var(--rgb-deep-orange)); --shape-color: rgb(var(--rgb-deep-orange), 0.2); }
+                        12.5% { --icon-color: rgb(var(--rgb-orange)); --shape-color: rgb(var(--rgb-orange), 0.2); }
+                        18.75% { --icon-color: rgb(var(--rgb-amber)); --shape-color: rgb(var(--rgb-amber), 0.2); }
+                        25% { --icon-color: rgb(var(--rgb-yellow)); --shape-color: rgb(var(--rgb-yellow), 0.2); }
+                        31.25% { --icon-color: rgb(var(--rgb-lime)); --shape-color: rgb(var(--rgb-lime), 0.2); }
+                        37.5% { --icon-color: rgb(var(--rgb-light-green)); --shape-color: rgb(var(--rgb-light-green), 0.2); }
+                        43.75% { --icon-color: rgb(var(--rgb-green)); --shape-color: rgb(var(--rgb-green), 0.2); }
+                        50% { --icon-color: rgb(var(--rgb-teal)); --shape-color: rgb(var(--rgb-teal), 0.2); }
+                        56.25% { --icon-color: rgb(var(--rgb-cyan)); --shape-color: rgb(var(--rgb-cyan), 0.2); }
+                        62.5% { --icon-color: rgb(var(--rgb-light-blue)); --shape-color: rgb(var(--rgb-light-blue), 0.2); }
+                        68.75% { --icon-color: rgb(var(--rgb-blue)); --shape-color: rgb(var(--rgb-blue), 0.2); }
+                        75% { --icon-color: rgb(var(--rgb-indigo)); --shape-color: rgb(var(--rgb-indigo), 0.2); }
+                        81.25% { --icon-color: rgb(var(--rgb-deep-purple)); --shape-color: rgb(var(--rgb-deep-purple), 0.2); }
+                        87.5% { --icon-color: rgb(var(--rgb-purple)); --shape-color: rgb(var(--rgb-purple), 0.2); }
+                        93.75% { --icon-color: rgb(var(--rgb-pink)); --shape-color: rgb(var(--rgb-pink), 0.2); }
+                      }
+              - type: custom:mushroom-template-card
+                icon: none
+                icon_color: red
+                primary: Random
+                card_mod:
+                  style: |
+                    :host {
+                      --card-mod-icon: mdi:dice-{{range(1, 6) | random}};
+                    }
+              - type: custom:mushroom-template-card
+                icon: mdi:shimmer
+                icon_color: amber
+                primary: Sparkle
+                card_mod:
+                  style:
+                    mushroom-shape-icon$: |
+                      ha-icon {
+                        --icon-animation: stars 4s linear infinite;
+                      }
+                      .shape {
+                        --shape-color: rgba(var(--rgb-disabled), 0.2);
+                      }
+                      @keyframes stars {
+                        0%, 3.1%, 14.1%, 40.1%, 55.1% { clip-path: inset(0 0 0 0); }
+                        3%, 40% { clip-path: polygon(48% 100%, 48% 62%, 0 63%, 0 0, 100% 0, 99% 100%); }
+                        14% { clip-path: polygon(49% 45%, 48% 100%, 0 100%, 0 0, 100% 0, 100% 36%); }
+                        55% { clip-path: polygon(0 100%, 0 60%, 41% 65%, 49% 46%, 100% 44%, 100% 100%); }
+                      }
+              - type: custom:mushroom-template-card
+                icon: mdi:bacteria
+                icon_color: light-green
+                primary: Eeeew
+                card_mod:
+                  style:
+                    mushroom-shape-icon$: |
+                      ha-icon {
+                        --icon-animation: wiggle 0.5s ease infinite;
+                        transform-origin: 80% 80%;
+                      }
+                      @keyframes wiggle {
+                        0%, 100% { transform: scale(1) rotate(1deg); }
+                        50% { transform: scale(1.04) rotate(-2deg); }
+                    .: |
+                      mushroom-shape-icon {
+                        display: flex;
+                        animation: spin 20s infinite;
+                      }
+              - type: custom:mushroom-template-card
+                primary: Sunny
+                icon: mdi:weather-sunny
+                icon_color: amber
+                card_mod:
+                  style:
+                    mushroom-shape-icon$: |
+                      ha-icon {
+                        --icon-animation: sunny 8s ease-in-out infinite alternate;
+                      }
+                      @keyframes sunny {
+                        70% { transform: rotate(360deg) scale(1); }
+                        80% { transform: scale(1); }
+                        90% { transform: scale(1.15); }
+                        100% { transform: scale(1); }
+                      }
+              - type: custom:mushroom-template-card
+                primary: Cloudy
+                icon: mdi:weather-cloudy
+                icon_color: grey
+                card_mod:
+                  style:
+                    mushroom-shape-icon$: |
+                      ha-icon {
+                        --icon-animation: cloudy 10s ease-in-out infinite;
+                      }
+                      @keyframes cloudy {
+                        0%, 100% { transform: translateX(3px); }
+                        30% { transform: translateX(-1px); }
+                        45% { transform: translateX(1.5px); }
+                        75% { transform: translateX(-3.2px); }
+                      }null
+              - type: custom:mushroom-template-card
+                primary: Rainy
+                icon: mdi:weather-rainy
+                icon_color: blue
+                card_mod:
+                  style:
+                    mushroom-shape-icon$: |
+                      ha-icon {
+                        --icon-animation: cloudy 10s ease-in-out infinite, rain 1.5s infinite; 
+                      }
+                      @keyframes cloudy {
+                        0%, 100% { transform: translateX(3px); }
+                        30% { transform: translateX(-1px); }
+                        45% { transform: translateX(1.5px); }
+                        75% { transform: translateX(-3.2px); }
+                      }
+                      @keyframes rain {
+                        50% { clip-path: polygon(0 0, 100% 0, 100% 73%, 71% 73%, 50% 39%, 29% 73%, 0 73%); }
+                      }
+              - type: custom:mushroom-template-card
+                primary: Pouring
+                icon: mdi:weather-pouring
+                icon_color: blue
+                card_mod:
+                  style:
+                    mushroom-shape-icon$: |
+                      ha-icon {
+                        --icon-animation: cloudy 10s ease-in-out infinite, rain 1s infinite; 
+                      }
+                      @keyframes cloudy {
+                        0%, 100% { transform: translateX(3px); }
+                        30% { transform: translateX(-1px); }
+                        45% { transform: translateX(1.5px); }
+                        75% { transform: translateX(-3.2px); }
+                      }
+                      @keyframes rain {
+                        0%, 50%, 100% { clip-path: inset(0 0 0 0); }
+                        25% { clip-path: polygon(0 0, 100% 0, 100% 83%, 54% 83%, 62% 47%, 47% 46%, 38% 83%, 0 83%); }
+                        75%  { clip-path: polygon(0 0, 100% 0, 100% 70%, 75% 70%, 80% 48%, 63% 48%, 54% 94%, 32% 94%, 46% 46%, 30% 46%, 23% 72%, 0 72%); }
+                      }
+              - type: custom:mushroom-template-card
+                primary: Tornado
+                icon: mdi:weather-tornado
+                icon_color: orange
+                card_mod:
+                  style:
+                    mushroom-shape-icon$: |
+                      ha-icon {
+                        --icon-animation: tornado 3s ease-in-out infinite; 
+                      }
+                      @keyframes tornado {
+                        0%, 100% { transform: translateX(3px) rotateY(0deg); }
+                        0.1%, 45.1% { transform: rotateY(180deg); }
+                        30% { transform: translateX(-1px) rotateY(180deg); }
+                        30.1%, 75.1% { transform: rotateY(0deg); }
+                        45% { transform: translateX(1.5px) rotateY(0deg); }
+                        75% { transform: translateX(-3.2px) rotateY(180deg); }
+                      }null
+              - type: custom:mushroom-template-card
+                primary: Lightning
+                icon: mdi:weather-lightning
+                icon_color: amber
+                card_mod:
+                  style:
+                    mushroom-shape-icon$: |
+                      ha-icon {
+                        --icon-animation: cloudy 10s ease-in-out infinite, lightning 4s infinite; 
+                      }
+                      @keyframes cloudy {
+                        0%, 100% { transform: translateX(3px); }
+                        30% { transform: translateX(-1px); }
+                        45% { transform: translateX(1.5px); }
+                        75% { transform: translateX(-3.2px); }
+                      }
+                      @keyframes lightning {
+                        10%, 15% { clip-path: polygon(0 0, 100% 0, 100% 100%, 47% 100%, 69% 55%, 66% 40%, 48% 39%, 24% 100%, 0 100%); transform: scale(1.1); }
+                        10.1%, 15.1% { clip-path: inset(0 0 0 0); transform: scale(1); }
+                      }
+              - type: custom:mushroom-template-card
+                icon: mdi:weather-night
+                icon_color: amber
+                primary: Clear Night
+                card_mod:
+                  style:
+                    mushroom-shape-icon$: |
+                      ha-icon {
+                        --icon-animation: moon 10s linear infinite, stars 5s linear infinite;
+                      }
+                      @keyframes moon {
+                        0%, 100% { transform: rotate(12deg); }
+                        30% { transform: rotate(-6deg); }
+                        45% { transform: rotate(8deg); }
+                        75% { transform: rotate(-10deg); }
+                      }
+                      @keyframes stars {
+                        0%, 3.1%, 14.1% { clip-path: inset(0 0 0 0); }
+                        3% { clip-path: polygon(1% 1%, 0% 99%, 99% 100%, 99% 62%, 68% 62%, 62% 44%, 76% 34%, 100% 34%, 99% 0%); }
+                        14% { clip-path: polygon(1% 1%, 0% 99%, 99% 100%, 100% 25%, 51% 45%, 38% 34%, 36% 0); }
+                      }
+              - type: custom:mushroom-template-card
+                primary: Windy
+                icon: mdi:weather-windy
+                icon_color: blue
+                card_mod:
+                  style:
+                    mushroom-shape-icon$: |
+                      ha-icon {
+                        --icon-animation: cloudy 10s ease-in-out infinite; 
+                        transform-origin: 15% 50%
+                      }
+                      @keyframes cloudy {
+                        0%, 100% { transform: scaleX(1.2); }
+                        30% { transform: scaleX(0.9); }
+                        45% { transform: scaleX(1.1); }
+                        75% { transform: scaleX(0.8); }
+                      }
+              - type: custom:mushroom-template-card
+                primary: Wind
+                icon: mdi:weather-windy-variant
+                icon_color: blue
+                card_mod:
+                  style:
+                    mushroom-shape-icon$: |
+                      ha-icon {
+                        --icon-animation: cloudy 10s ease-in-out infinite, wind 5s infinite; 
+                      }
+                      @keyframes cloudy {
+                        0%, 100% { transform: translateX(3px); }
+                        30% { transform: translateX(-1px); }
+                        45% { transform: translateX(1.5px); }
+                        75% { transform: translateX(-3.2px); }
+                      }
+                      @keyframes wind {
+                        0%, 50%, 100% { clip-path: inset(0 0 0 0); }
+                        25% { clip-path: inset(0 0 37% 0); }
+                      }
+              - type: custom:mushroom-template-card
+                primary: Snow
+                icon: mdi:weather-snowy
+                icon_color: grey
+                card_mod:
+                  style:
+                    mushroom-shape-icon$: |
+                      ha-icon {
+                        --icon-animation: cloudy 10s ease-in-out infinite, snow 4s infinite; 
+                      }
+                      @keyframes cloudy {
+                        0%, 100% { transform: translateX(3px); }
+                        30% { transform: translateX(-1px); }
+                        45% { transform: translateX(1.5px); }
+                        75% { transform: translateX(-3.2px); }
+                      }
+                      @keyframes snow {
+                        50% { clip-path: polygon(0 0, 100% 0, 100% 100%, 65% 100%, 76% 73%, 57% 49%, 34% 56%, 26% 79%, 37% 100%, 0 100%); }
+                        51% { clip-path: inset(0 0 0 0); }
+                      }
+              - type: custom:mushroom-template-card
+                primary: Hail
+                icon: mdi:weather-hail
+                icon_color: blue
+                card_mod:
+                  style:
+                    mushroom-shape-icon$: |
+                      ha-icon {
+                        --icon-animation: cloudy 10s ease-in-out infinite, hail 2s infinite; 
+                      }
+                      @keyframes cloudy {
+                        0%, 100% { transform: translateX(3px); }
+                        30% { transform: translateX(-1px); }
+                        45% { transform: translateX(1.5px); }
+                        75% { transform: translateX(-3.2px); }
+                      }
+                      @keyframes hail {
+                        0%, 26%, 51%, 76%, 100% { clip-path: inset(0 0 0 0); }
+                        25% { clip-path: polygon(0 0, 100% 0, 100% 100%, 62% 100%, 47% 69%, 56% 55%, 43% 43%, 31% 58%, 48% 68%, 63% 100%, 0 100%); }
+                        50%  { clip-path: polygon(0 0, 100% 0, 100% 100%, 62% 100%, 61% 86%, 74% 74%, 61% 60%, 46% 69%, 60% 87%, 63% 100%, 0 100%); }
+                        75%  { clip-path: polygon(0 0, 100% 0, 100% 100%, 47% 100%, 56% 83%, 42% 68%, 27% 81%, 37% 100%, 0 100%); }
+                      }
+              - type: custom:mushroom-template-card
+                primary: Hurricane
+                icon: mdi:weather-hurricane
+                icon_color: red
+                card_mod:
+                  style:
+                    mushroom-shape-icon$: |
+                      ha-icon {
+                        --icon-animation: spin 1.5s linear infinite reverse; 
+                      }
+              - type: custom:mushroom-template-card
+                primary: Dust
+                icon: mdi:weather-dust
+                icon_color: brown
+                card_mod:
+                  style:
+                    mushroom-shape-icon$: |
+                      ha-icon {
+                        --icon-animation: wind 10s ease-in-out infinite, dust 1s infinite; 
+                        transform-origin: 15% 50%
+                      }
+                      @keyframes wind {
+                        0%, 100% { transform: scaleX(1.2); }
+                        30% { transform: scaleX(0.9); }
+                        45% { transform: scaleX(1.1); }
+                        75% { transform: scaleX(0.8); }
+                      }
+                      @keyframes dust {
+                        0%, 21%, 41%, 61%, 81%, 100% { clip-path: inset(0 0 0 0); }
+                        20% { clip-path: polygon(0 0, 69% 0, 72% 27%, 100% 30%, 100% 100%, 0 100%); }
+                        40%  { clip-path: polygon(0 0, 100% 0, 100% 100%, 57% 100%, 57% 79%, 0 79%); }
+                        60%  { clip-path: polygon(30% 0, 100% 0, 100% 100%, 0 100%, 0 28%, 30% 28%); }
+                        80%  { clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%, 0 61%, 32% 62%, 32% 46%, 0 46%); }
+                      }
+              - type: custom:mushroom-template-card
+                primary: Foggy
+                icon: mdi:weather-fog
+                icon_color: grey
+                card_mod:
+                  style:
+                    mushroom-shape-icon$: |
+                      ha-icon {
+                        --icon-animation: cloudy 10s ease-in-out infinite, fog 4s infinite; 
+                      }
+                      @keyframes cloudy {
+                        0%, 100% { transform: translateX(3px); }
+                        30% { transform: translateX(-1px); }
+                        45% { transform: translateX(1.5px); }
+                        75% { transform: translateX(-3.2px); }
+                      }
+                      @keyframes fog {
+                        0%, 26%, 76%, 100% { clip-path: inset(0 0 0 0); }
+                        25% { clip-path: polygon(0 0, 100% 0, 100% 59%, 60% 59%, 60% 74%, 100% 74%, 100% 100%, 0 100%); }
+                        75%  { clip-path: polygon(0 0, 100% 0, 100% 100%, 26% 100%, 26% 76%, 0 76%); }
+                      }
+              - type: custom:mushroom-template-card
+                primary: Cloudy
+                icon: mdi:weather-partly-cloudy
+                icon_color: amber
+                card_mod:
+                  style:
+                    mushroom-shape-icon$: |
+                      ha-icon {
+                        --icon-animation: cloudy 10s ease-in-out infinite, sun 2s infinite;
+                      }
+                      @keyframes cloudy {
+                        0%, 100% { transform: translateX(3px); }
+                        30% { transform: translateX(-1px); }
+                        45% { transform: translateX(1.5px); }
+                        75% { transform: translateX(-3.2px); }
+                      }
+                      @keyframes sun {
+                        50% { clip-path: polygon(0 67%, 18% 55%, 16% 31%, 41% 12%, 67% 24%, 77% 59%, 100% 64%, 100% 100%, 0 100%); }
+                      }
+              - type: custom:mushroom-template-card
+                primary: Fireplace
+                icon: mdi:fireplace
+                icon_color: red
+                card_mod:
+                  style:
+                    mushroom-shape-icon$: |
+                      ha-icon {
+                        --icon-animation: fire 800ms infinite;
+                        transform-origin: 50% 85%;
+                      }
+                      @keyframes fire {
+                          0%, 19%, 23%, 39%, 43%, 49%, 53%, 69%, 73%, 89%, 93%, 100% { clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%); }
+                          20%, 40%, 50%, 70%, 90% { clip-path: polygon(0 0, 100% 0, 100% 100%, 65% 99%, 66% 49%, 52% 44%, 33% 48%, 33% 82%, 66% 82%, 69% 100%, 0 100%); }
+                      }
+              - type: custom:stack-in-card
+                cards:
+                  - type: custom:mushroom-template-card
+                    icon: mdi:washing-machine
+                    icon_color: orange
+                    primary: 'Washing Machine #2'
+                    card_mod:
+                      style:
+                        mushroom-shape-icon$: |
+                          ha-icon {
+                            --icon-animation: shake 400ms ease-in-out infinite;
+                            transform-origin: 50% 58%;
+                            clip-path: polygon(0 0, 0 100%, 35% 100%, 34% 68%, 60% 41%, 71% 56%, 65% 74%, 47% 79%, 32% 69%, 35% 100%, 100% 100%, 100% 0);
+                          }
+                          @keyframes shake {
+                            0%, 100% { transform: translate(0, 0) rotate(0); }
+                            20%  { transform: translate(0.4px, -0.4px) rotate(-4deg); }
+                            40%  { transform: translate(-0.4px, 0.4px) rotate(4deg); }
+                            60%  { transform: translate(0.4px, 0.4px) rotate(-4deg); }
+                            80%  { transform: translate(-0.4px, -0.4px) rotate(4deg); }
+                          }
+                  - type: custom:mushroom-template-card
+                    icon: mdi:washing-machine
+                    icon_color: orange
+                    card_mod:
+                      style:
+                        mushroom-shape-icon$: |
+                          ha-icon {
+                            --icon-animation: spin 1s linear infinite;
+                            transform-origin: 50% 58%;
+                            clip-path: circle(21.7% at 50% 58%);
+                          }
+                          .shape {
+                            --shape-color: none;
+                          }
+                        .: |
+                          ha-card {
+                            width: 66px;
+                            top: -66px;
+                          }
+                card_mod:
+                  style: |
+                    ha-card {
+                      height: 66px;
+                    }
+              - type: custom:mushroom-template-card
+                icon: mdi:pot-steam
+                icon_color: grey
+                primary: Pot
+                card_mod:
+                  style:
+                    mushroom-shape-icon$: |
+                      ha-icon {
+                        --icon-animation: steam 2s ease-in-out infinite;
+                      }
+                      @keyframes steam {
+                        0%, 100% { clip-path: inset(0 0 0 0); }
+                        50% { clip-path: inset(39% 0 0 0); }
+                      }
+              - type: custom:mushroom-template-card
+                primary: Serenity
+                icon: mdi:scent
+                icon_color: green
+                card_mod:
+                  style:
+                    mushroom-shape-icon$: |
+                      ha-icon {
+                        --icon-animation: wave 6s ease infinite;
+                      }
+                      @keyframes wave {
+                        50% { transform: rotatey(180deg); --icon-color: rgb(var(--rgb-cyan)); }
+                      }
+                      .shape {
+                        --shape-animation: color 6s ease infinite;
+                      }
+                      @keyframes color {
+                        50% { --shape-color: rgba(var(--rgb-cyan), 0.2); }
+                      }
+              - type: custom:mushroom-template-card
+                primary: 'Music #1'
+                icon: mdi:music
+                icon_color: blue
+                card_mod:
+                  style:
+                    mushroom-shape-icon$: |
+                      ha-icon {
+                        --icon-animation: music 2s ease-in-out infinite alternate;
+                        transform-origin: 50% 100%
+                      }
+                      .shape {
+                        perspective: 7px;
+                      }
+                      @keyframes music {
+                        0%, 100% { transform: translateY(0px) scaleX(1); }
+                        20% { transform: translateY(2px) scaleX(0.9); }
+                        40% { transform: rotateY(10deg) rotateZ(-10deg); }
+                        60% { transform: translateY(-4px) scaleX(1.1); }
+                        80% { transform: rotateY(-10deg) rotateZ(10deg); }
+                      }
+              - type: custom:mushroom-template-card
+                primary: 'Music #2'
+                icon: mdi:music
+                icon_color: blue
+                card_mod:
+                  style:
+                    mushroom-shape-icon$: |
+                      ha-icon {
+                        --icon-animation: beat 1.3s ease-out infinite both;
+                        transform-origin: 50% 80%;
+                      }
+                      @keyframes beat {
+                        0% { transform: scale(1); }
+                        10% { transform: scale(1.1); }
+                        17% { transform: scale(1.05); }
+                        33% { transform: scale(1.25); }
+                        60% { transform: scale(1); }
+                      }
+              - type: custom:mushroom-template-card
+                icon: mdi:format-list-bulleted-square
+                icon_color: purple
+                primary: Playlist
+                card_mod:
+                  style:
+                    mushroom-shape-icon$: |
+                      ha-icon {
+                        --icon-animation: clip 2s steps(4) infinite;
+                      }
+                      @keyframes clip {
+                        0% { clip-path: inset(0 0 85% 0); }
+                        100% { clip-path: inset(0 0 -5% 0); }
+                      }
+              - type: custom:mushroom-template-card
+                icon: mdi:grain
+                icon_color: brown
+                primary: Grain
+                card_mod:
+                  style:
+                    mushroom-shape-icon$: |
+                      ha-icon {
+                        --icon-animation: flip 1s steps(1) infinite;
+                      }
+                      @keyframes flip {
+                        50% { transform: rotateY(180deg); }
+                      }
+              - type: custom:mushroom-template-card
+                icon: mdi:bullseye
+                icon_color: purple
+                primary: Focus
+                card_mod:
+                  style:
+                    mushroom-shape-icon$: |
+                      ha-icon {
+                        --icon-animation: focus 4s linear infinite alternate;
+                      }
+                      @keyframes focus {
+                        50% { filter: blur(10px); }
+                      }
+              - type: custom:mushroom-template-card
+                icon: mdi:access-point
+                icon_color: teal
+                primary: Access Point
+                card_mod:
+                  style:
+                    mushroom-shape-icon$: |
+                      ha-icon {
+                        --icon-animation: clip 1.5s infinite;
+                      }
+                      @keyframes clip {
+                        0% { clip-path: circle(13.0% at 50% 50%); }
+                        100% { clip-path: circle(50.0% at 50% 50%); }
+                      }
+                      .shape {
+                        --shape-animation: ping 1.5s infinite;
+                      }
+                      @keyframes ping {
+                        0% { box-shadow: 0 0 1px 1px rgba(var(--rgb-teal), 0.3) inset; }
+                        50% { box-shadow: 0 0 5px 15px transparent inset; }
+                        51% { box-shadow: 0 0 1px 1px rgba(var(--rgb-teal), 0.3); }
+                        100% { box-shadow: 0 0 5px 15px transparent; }
+                      }
+              - type: custom:mushroom-template-card
+                primary: Alert!
+                icon: mdi:fire
+                icon_color: red
+                card_mod:
+                  style:
+                    mushroom-shape-icon$: |
+                      .shape {
+                        --shape-animation: ping 1.5s infinite, blink 1.5s ease-in-out infinite;;
+                      }
+                      @keyframes ping {
+                        0% { box-shadow: 0 0 0 0 rgba(var(--rgb-red), 0.7); }
+                        100% { box-shadow: 0 0 5px 15px transparent; }
+                      }
+                      @keyframes blink {
+                        100% {opacity: 0;}
+                      }
+              - type: custom:mushroom-template-card
+                icon: mdi:record-circle
+                icon_color: cyan
+                primary: Record
+                card_mod:
+                  style:
+                    mushroom-shape-icon$: |
+                      .shape {
+                        background: linear-gradient(-45deg, rgba(var(--rgb-black), 0.4) 0%, rgba(var(--rgb-black), 0.6) 50%, rgba(var(--rgb-black), 0.4) 100%);
+                        --shape-animation: spin 400ms linear infinite;
+                        --shape-color: none;
+                      }
+              - type: custom:mushroom-template-card
+                primary: Heart
+                icon: mdi:heart
+                icon_color: red
+                card_mod:
+                  style:
+                    mushroom-shape-icon$: |
+                      .shape {
+                        --icon-animation: beat 1.3s ease-out infinite both;
+                        transform-origin: 50% 60%;
+                        --shape-animation: heart 1.3s ease-out infinite both;
+                      }
+                      @keyframes beat {
+                        0% { transform: scale(1); }
+                        10% { transform: scale(1.1); }
+                        17% { transform: scale(1.05); }
+                        33% { transform: scale(1.25); }
+                        60% { transform: scale(1); }
+                      }
+                      @keyframes heart {
+                        0% { box-shadow: 0 0 0 0 rgba(var(--rgb-red), 0.2); }
+                        10% { box-shadow: 0 0 5px 5px transparent; }
+                        17% { box-shadow: 0 0 0 0 rgba(var(--rgb-red), 0.2); }
+                        33% { box-shadow: 0 0 5px 5px transparent; }
+                        60% { box-shadow: 0 0 0 0 rgba(var(--rgb-red), 0.2); }
+                      }
+              - type: custom:mushroom-template-card
+                icon: mdi:play
+                icon_color: orange
+                primary: Play
+                card_mod:
+                  style:
+                    mushroom-shape-icon$: |
+                      ha-icon {
+                        --icon-animation: spin 4s steps(4) infinite;
+                      }
+              - type: custom:stack-in-card
+                cards:
+                  - type: custom:mushroom-template-card
+                    icon: mdi:pine-tree
+                    icon_color: green
+                    primary: Christmas Tree
+                  - type: custom:mushroom-template-card
+                    icon: mdi:star-four-points
+                    icon_color: yellow
+                    primary: Star
+                    card_mod:
+                      style:
+                        mushroom-shape-icon$: |
+                          ha-icon {
+                            --icon-animation: star 8s ease infinite alternate;
+                          }
+                          @keyframes star {
+                            0%, 100% { transform: translateY(-10px) rotate(0deg) scale(0.4); }
+                            50% { transform: translateY(-10px) rotate(360deg) scale(0.6); }
+                          }
+                          .shape {
+                            --shape-color: none;
+                          }
+                        .: |
+                          ha-card {
+                            width: 66px;
+                            top: -66px;
+                          }
+                  - type: custom:mushroom-template-card
+                    icon: mdi:gift
+                    icon_color: red
+                    card_mod:
+                      style:
+                        mushroom-shape-icon$: |
+                          ha-icon {
+                            --icon-animation: surprise 4s ease infinite;
+                          }
+                          @keyframes surprise {
+                            0%, 20%, 100% { transform: translateY(0); }
+                            2.5% { transform: translateY(-2px) rotate(-27deg); }
+                            5% { transform: translateY(-2px) rotate(21deg); }
+                            7.5% { transform: translateY(-2px) rotate(-15deg); }
+                            10% { transform: translateY(-2px) rotate(9deg); }
+                            12.5% { transform: translateY(0); }
+                            15% { transform: translateY(-1.2px) }
+                          }
+                          .shape {
+                            --shape-color: none;
+                            --icon-size: 20px;
+                            top: 16px;
+                            left: 18px;
+                          }
+                        .: |
+                          ha-card {
+                            width: 66px;
+                            top: -132px;
+                          }
+                card_mod:
+                  style: |
+                    ha-card {
+                      height: 66px;
+                    }
+              - type: custom:mushroom-template-card
+                primary: Doggy
+                icon: mdi:dog
+                icon_color: brown
+                card_mod:
+                  style:
+                    mushroom-shape-icon$: |
+                      ha-icon {
+                        --icon-animation: huh 4s ease infinite;
+                        transform-origin: 50% 60%;
+                      }
+                      @keyframes huh {
+                        0%, 10%, 75%, 100% { transform: rotate(0deg); }
+                        15% { transform: rotate(-25deg); }
+                        30%, 35% { transform: rotate(-40deg); }
+                        50% { transform: rotate(12deg); }
+                        65% { transform: rotate(-8deg); }
+                      }
+              - type: custom:mushroom-template-card
+                primary: Catty
+                icon: mdi:cat
+                icon_color: orange
+                card_mod:
+                  style:
+                    mushroom-shape-icon$: |
+                      ha-icon {
+                        --icon-animation: huh 4s ease infinite;
+                        transform-origin: 50% 60%;
+                      }
+                      @keyframes huh {
+                        0%, 10%, 75%, 100% { transform: rotate(0deg); }
+                        15% { transform: rotate(-25deg); }
+                        30%, 35% { transform: rotate(-40deg); }
+                        50% { transform: rotate(12deg); }
+                        65% { transform: rotate(-8deg); }
+                      }
