@@ -13,7 +13,7 @@
 **awesome-mushroom-cards**  is a collection of Awesome resources for the [lovelace-mushroom](https://github.com/piitaya/lovelace-mushroom) The goal was to create a simple overview for the awesome user created creations. 
 
 
-| <p><strong>👋 New to Mushroom Cards? Got questions?</strong><br><strong>Check out the</strong> <a href="https://community.home-assistant.io/t/mushroom-cards-build-a-beautiful-dashboard-easily/388590"><strong>HA Community</strong></a></p> | <p><strong>Check out the documentation:</strong><br><a href="https://dodoooh.github.io/awesome-mushroom-cards"><strong>Documentation</strong></a></p> |
+| <p><strong>👋 New to Mushroom Cards? Got questions?</strong><br><strong>Check out the</strong> <a href="https://community.home-assistant.io/t/mushroom-cards-build-a-beautiful-dashboard-easily/388590"><strong>HA Community</strong></a></p> | <p><strong>Check out the:</strong><br><a href="https://dodoooh.github.io/awesome-mushroom-cards"><strong>Documentation</strong></a></p> |
 | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------- |
 
 
