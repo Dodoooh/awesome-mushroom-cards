@@ -313,7 +313,8 @@ card_mod:
 
 Author: [rhysb](https://community.home-assistant.io/u/rhysb) | [HA Community](https://community.home-assistant.io/t/mushroom-cards-build-a-beautiful-dashboard-easily/388590/4219?u=d0dooohh)
 
-![Gif Animation 01](https://community-assets.home-assistant.io/original/4X/7/5/3/753bf52b0b03fb5d03aa32dbfc9e410cc30fce95.gif)
+![Gif Animation 01](https://community-assets.home-assistant.io/original/4X/3/c/d/3cd6f5ab1b7bc51f21e3f26126b36595c6f47d1f.gif)
+
 
 **Entities to replace:**
 * media_player.media_player_01 `Required`
