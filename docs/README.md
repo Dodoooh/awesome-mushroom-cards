@@ -35,4 +35,4 @@ See the [General Instructions](instructions/general.md) for more details.
 
 # Release notes
 
-View the [Change log](changelog.md) to know which cards have been added. 
+View the [Change log](instructions/changelog.md) to know which cards have been added. 
