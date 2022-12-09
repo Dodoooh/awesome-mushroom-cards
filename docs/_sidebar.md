@@ -1,11 +1,11 @@
 - Instructions
   - [General](instructions/general.md)
-  - [Card Template](instructions/awesome-mushroom-card-template.md)
+  - [Card Template](instructions/awesome-mushroom-cards-template.md)
 
 - Cards
 
   - Home
-    - [Room Card](mushroom-cards/home/roomcard-01.md)
+    - [Room Cards](mushroom-cards/home/roomcard-01.md)
 
   - Monitoring
     - [Clima](mushroom-cards/monitoring/clima-01.md)

@@ -115,6 +115,9 @@ Author: [rhysb](https://community.home-assistant.io/u/rhysb) | [HA Community](ht
 
 ![](https://community-assets.home-assistant.io/optimized/4X/0/5/2/05284fdf4df21735e0474a80265c7d05103226d7_2_269x500.png)
 
+**Helpers to create:**
+* input_boolean.3d_printer_dropdown `Required`
+
 **Entities to replace:**
 * switch.3d_printer_power `Required`
 * camera.3d_printer_camera `Required`
@@ -130,9 +133,6 @@ Author: [rhysb](https://community.home-assistant.io/u/rhysb) | [HA Community](ht
 * sensor.octoprint_target_bed_temp `Required` 
 * sensor.octoprint_actual_tool0_temp `Required` 
 * sensor.octoprint_target_tool0_temp `Required` 
-
-**Helpers to create:**
-* input_boolean.3d_printer_dropdown `Required`
 
 ```yaml
 type: custom:stack-in-card
