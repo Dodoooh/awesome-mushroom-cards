@@ -7,8 +7,8 @@ Author: [Tim_Knowlden](https://community.home-assistant.io/u/Tim_Knowlden) | [HA
 ![](https://community-assets.home-assistant.io/original/4X/1/1/5/1157d43ae34e7002154e78a2c08b7044669f12a4.png)
 
 **Entities to replace:**
-* dummy_date_01 `Required`
-* dummy_date_02 `Required`
+* input_datetime.dummy_date_01 `Required`
+* input_datetime.dummy_date_02 `Required`
 
 ```yaml
 type: custom:vertical-stack-in-card

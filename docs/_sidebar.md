@@ -1,5 +1,6 @@
 - Instructions
   - [General](instructions/general.md)
+  - [Card Template](instructions/awesome-mushroom-card-template.md)
 
 - Cards
 

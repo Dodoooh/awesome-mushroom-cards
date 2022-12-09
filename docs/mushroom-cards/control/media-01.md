@@ -9,7 +9,7 @@ Author: [rhysb](https://community.home-assistant.io/u/rhysb) | [HA Community](ht
 ![Gif Animation 01](../../images//media-media-01.gif)
 
 **Entities to replace:**
-* media_player_01 `Required`
+* media_player.media_player_01 `Required`
 
 ```yaml
 ttype: custom:stack-in-card
@@ -185,7 +185,7 @@ Author: [rhysb](https://community.home-assistant.io/u/rhysb) | [HA Community](ht
 ![Gif Animation 01](https://community-assets.home-assistant.io/original/4X/4/f/0/4f055ee2ee6d033b70bbd288206883b844732234.gif)
 
 **Entities to replace:**
-* media_player_01 `Required`
+* media_player.media_player_01 `Required`
 
 ```yaml
 type: custom:stack-in-card
@@ -316,7 +316,7 @@ Author: [rhysb](https://community.home-assistant.io/u/rhysb) | [HA Community](ht
 ![Gif Animation 01](https://community-assets.home-assistant.io/original/4X/7/5/3/753bf52b0b03fb5d03aa32dbfc9e410cc30fce95.gif)
 
 **Entities to replace:**
-* media_player_01 `Required`
+* media_player.media_player_01 `Required`
 
 ```yaml
 type: custom:stack-in-card

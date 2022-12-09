@@ -7,7 +7,15 @@ Author: [theandouz](https://community.home-assistant.io/u/theandouz) | [HA Commu
 ![](https://community-assets.home-assistant.io/original/4X/9/0/b/90b498143a48528b1bcd080e7c2cc1c243307706.gif)
 
 **Entities to replace:**
-* NOT SET `Required`
+* media_player.media_player_01 `Required`
+* lock.dummy_lock_01 `Required`
+* light.dummy_light_01 `Required`
+* light.dummy_light_02 `Required`
+* light.dummy_light_03 `Required`
+* light.dummy_light_04 `Required`
+* sensor.temp_01 `Required`
+* binary_sensor.dummy_alarm `Required`
+* sensor.ps5_activity `Required`
 
 ```yaml
 type: custom:vertical-stack-in-card
@@ -18,10 +26,10 @@ cards:
     cards:
       - type: custom:mushroom-template-card
         primary: Family Room
-        secondary: '{{ states(''sensor.family_room_temperature'') }} °F'
+        secondary: '{{ states(''sensor.temp_01'') }} °F'
         icon: mdi:coffee
         layout: horizontal
-        entity: light.family_room
+        entity: light.dummy_light_01
         tap_action:
           action: navigate
           navigation_path: family_room
@@ -30,14 +38,14 @@ cards:
         double_tap_action:
           action: toggle
         picture: >-
-          {% if is_state('media_player.family_room','playing') %}
-            {{ states.media_player.family_room.attributes.entity_picture }}
+          {% if is_state('media_player.media_player_01','playing') %}
+            {{ states.media_player.media_player_01.attributes.entity_picture }}
           {% else %} {% endif %}
         card_mod:
           style:
             mushroom-shape-avatar$: |
               .picture {
-                {% if is_state('media_player.family_room','playing') %}
+                {% if is_state('media_player.media_player_01','playing') %}
                   animation: rotation 4s linear infinite;
                 {% else %}  {% endif %}
               }
@@ -61,7 +69,7 @@ cards:
                 border-radius: 16px 16px 0px 0px;
               }
       - type: custom:mushroom-media-player-card
-        entity: media_player.family_room
+        entity: media_player.media_player_01
         use_media_artwork: true
         use_media_info: true
         collapsible_controls: true
@@ -72,7 +80,7 @@ cards:
           service: media_player.media_play_pause
           data: {}
           target:
-            entity_id: media_player.family_room
+            entity_id: media_player.media_player_01
         card_mod:
           style: |
             ha-card {
@@ -121,7 +129,7 @@ cards:
               {% else %}
                 mdi:lock-open
               {% endif%}
-            entity: lock.kitchen_door
+            entity: lock.dummy_lock_01
             icon_color: |-
               {% if is_state(config.entity, "locked") %}
                 green
@@ -140,7 +148,7 @@ cards:
                   {% endif %}
                 }
           - type: custom:mushroom-light-card
-            entity: light.patio_strip_lights
+            entity: light.dummy_light_02
             layout: vertical
             primary_info: none
             secondary_info: none
@@ -170,7 +178,7 @@ cards:
     chips:
       - type: conditional
         conditions:
-          - entity: light.the_flamingo
+          - entity: light.dummy_light_03
             state: 'on'
         chip:
           type: template
@@ -181,23 +189,23 @@ cards:
             {%else%}
               grey
             {%endif%}
-          entity: light.the_flamingo
+          entity: light.dummy_light_03
           icon: mdi:bird
           tap_action:
             action: toggle
       - type: conditional
         conditions:
-          - entity: light.local_lamp
+          - entity: light.dummy_light_04
             state: 'on'
         chip:
           type: light
-          entity: light.local_lamp
+          entity: light.dummy_light_04
           content_info: none
           use_light_color: true
           icon: mdi:lamp
       - type: conditional
         conditions:
-          - entity: lock.kitchen_door
+          - entity: lock.dummy_lock_01
             state: unlocked
         chip:
           type: template
@@ -208,10 +216,10 @@ cards:
             service: lock.lock
             data: {}
             target:
-              entity_id: lock.kitchen_door
+              entity_id: lock.dummy_lock_01
       - type: conditional
         conditions:
-          - entity: binary_sensor.kitchen_door_alarm_sensor
+          - entity: binary_sensor.dummy_alarm
             state: 'on'
         chip:
           type: template
@@ -221,23 +229,26 @@ card_mod:
   style: |
     ha-card {
       height: 102px;
-      {% if is_state('light.family_room', 'on') %}
-          background: rgba({{ state_attr('light.family_room','rgb_color') [0] }},
-                  {{ state_attr('light.family_room','rgb_color') [1] }},
-                  {{ state_attr('light.family_room','rgb_color') [2] }},0.1);
+      {% if is_state('light.dummy_light_01', 'on') %}
+          background: rgba({{ state_attr('light.dummy_light_01','rgb_color') [0] }},
+                  {{ state_attr('light.dummy_light_01','rgb_color') [1] }},
+                  {{ state_attr('light.dummy_light_01','rgb_color') [2] }},0.1);
       {% endif %}
       }
 ```
 
 
-### Interactive Room Card
+### Room Card 01
 
 Author: [Boostin4HP](https://community.home-assistant.io/u/Boostin4HP) | [HA Community](https://community.home-assistant.io/t/mushroom-cards-build-a-beautiful-dashboard-easily/388590/3222?u=d0doooh)
 
 ![](https://community-assets.home-assistant.io/optimized/4X/b/3/9/b396dc023bb3977847c9ba84508c57fc032a5c81_2_690x468.jpeg)
 
 **Entities to replace:**
-* NOT SET `Required`
+* sensor.dummy_battery_level_01 `Required`
+* light.dummy_light_01 `Required`
+* lock.dummy_lock_01 `Required`
+* binary_sensor.dummy_window `Required`
 
 ```yaml
 type: custom:stack-in-card
@@ -253,7 +264,7 @@ cards:
         layout: horizontal
         multiline_secondary: false
         badge_icon: |-
-          {% set bl = states('sensor.door_lock_battery_level_2') | int %}
+          {% set bl = states('sensor.dummy_battery_level_01') | int %}
           {% if bl < 10 %} mdi:battery-outline
           {% elif bl < 20 %} mdi:battery-10
           {% elif bl < 30 %} mdi:battery-20
@@ -268,7 +279,7 @@ cards:
           {% else %} mdi:battery-unknown
           {% endif %}
         badge_color: |-
-          {% set bl = states('sensor.door_lock_battery_level_2') | int %}
+          {% set bl = states('sensor.dummy_battery_level_01') | int %}
           {% if bl < 10 %} red
           {% elif bl < 20 %} red
           {% elif bl < 30 %} red
@@ -328,7 +339,7 @@ cards:
                   margin-bottom: -18px !important;
                 }
           - type: custom:mushroom-light-card
-            entity: light.foyer_lights
+            entity: light.dummy_light_01
             fill_container: true
             show_brightness_control: true
             icon_type: none
@@ -353,22 +364,22 @@ cards:
     chips:
       - type: conditional
         conditions:
-          - entity: light.foyer_lights
+          - entity: light.dummy_light_01
             state: 'on'
         chip:
           type: entity
-          entity: light.foyer_lights
+          entity: light.dummy_light_01
           icon_color: amber
           tap_action:
             action: call-service
             service: light.turn_off
             service_data: {}
             target:
-              entity_id: light.foyer_lights
+              entity_id: light.dummy_light_01
           content_info: none
           icon: mdi:lightbulb
       - type: template
-        entity: lock.door_lock_2
+        entity: lock.dummy_lock_01
         icon: |-
           {% set state=states(entity) %}
           {% if state=='locked' %}
@@ -390,7 +401,7 @@ cards:
           amber
           {% endif %}
       - type: template
-        entity: binary_sensor.front_door_sensor_access_control_window_door_is_open
+        entity: binary_sensor.dummy_window
         icon: |-
           {% set state=states(entity) %}
           {% if state=='on' %}
@@ -426,7 +437,7 @@ card_mod:
     ha-card {
       height: 100px;
       background: #1a1a1a;
-      {% if is_state('light.foyer_lights', 'on') %}
+      {% if is_state('light.dummy_light_01', 'on') %}
          background: rgba(255, 152, 0, 0.1);
       {% endif %}
     }
