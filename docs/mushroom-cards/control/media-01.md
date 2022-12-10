@@ -6,7 +6,7 @@
 
 Author: [rhysb](https://community.home-assistant.io/u/rhysb) | [HA Community](https://community.home-assistant.io/t/mushroom-cards-build-a-beautiful-dashboard-easily/388590/4304?u=d0doooh)
 
-![Gif Animation 01](../../images//media-media-01.gif)
+![](https://community-assets.home-assistant.io/original/4X/3/c/d/3cd6f5ab1b7bc51f21e3f26126b36595c6f47d1f.gif)
 
 **Entities to replace:**
 * media_player.media_player_01 `Required`
@@ -423,4 +423,56 @@ card_mod:
       filter: blur(150px) saturate(400%);
       background-size: cover;
     }
+```
+
+
+### Volume Slider
+
+Author: [rhysb](https://community.home-assistant.io/u/rhysb) | [HA Community](https://community.home-assistant.io/t/mushroom-cards-build-a-beautiful-dashboard-easily/388590/2142)
+
+![Volume Slider](https://community-assets.home-assistant.io/optimized/4X/0/d/7/0d7a24009e0ea15f1324a0b292aee020839d55a9_2_517x150.png)
+
+
+**Entities to replace:**
+* input_number.dummy_volume `Required`
+
+```yaml
+type: custom:stack-in-card
+cards:
+  - type: custom:mushroom-template-card
+    entity: input_number.dummy_volume
+    icon: |
+      {% set vol_level = states(entity) | float %}
+      {% if vol_level == 0 %}
+        mdi:volume-mute
+      {% elif vol_level > 0.66 %}
+        mdi:volume-high
+      {% elif vol_level < 0.33 %}
+        mdi:volume-low
+      {% else %}
+        mdi:volume-medium
+      {% endif %}
+    icon_color: indigo
+    primary: Volume
+    secondary: |
+      {% set vol = states(entity) | float * 100 %}
+      {{ vol | round | int }}%
+  - type: custom:my-slider
+    entity: input_number.dummy_volume
+    radius: 12px
+    height: 42px
+    mainSliderColor: rgb(var(--mush-rgb-indigo))
+    secondarySliderColor: rgba(var(--mush-rgb-indigo), 0.2)
+    mainSliderColorOff: rgb(var(--mush-rgb-disabled))
+    secondarySliderColorOff: rgba(var(--mush-rgb-disabled), 0.2)
+    thumbHorizontalPadding: 0px
+    thumbVerticalPadding: 0px
+    thumbWidth: 0px
+    card_mod:
+      style: |
+        ha-card {
+          padding: 0px 11px 11px;
+          --mush-rgb-disabled: 189,189,189;
+          --mush-rgb-indigo: 63, 81, 181;
+        }
 ```
