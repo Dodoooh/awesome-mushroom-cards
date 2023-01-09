@@ -476,3 +476,164 @@ cards:
           --mush-rgb-indigo: 63, 81, 181;
         }
 ```
+
+### Input Select Card Compact
+
+Author: [rhysb](https://community.home-assistant.io/u/rhysb) | [HA Community](https://community.home-assistant.io/t/mushroom-cards-build-a-beautiful-dashboard-easily/388590/2165)
+
+![Input Select Card Compact](https://community-assets.home-assistant.io/original/4X/d/5/4/d5448a44f94c2297fdb01923f3276bade0070e70.png)
+
+
+**Entities to replace:**
+* input_select.amp_source `Required`
+* input_select.select_option `Required`
+
+```yaml
+type: custom:stack-in-card
+mode: horizontal
+cards:
+  - type: custom:mushroom-template-card
+    primary: '{{ state_attr(entity, ''friendly_name'') }}'
+    secondary: '{{ states(entity) }}'
+    icon: mdi:audio-input-rca
+    entity: input_select.amp_source
+    icon_color: red
+  - type: custom:mushroom-chips-card
+    chips:
+      - type: entity
+        entity: input_select.amp_source
+        tap_action:
+          action: call-service
+          service: input_select.select_option
+          data:
+            option: CD
+          target:
+            entity_id: input_select.amp_source
+        icon: fas:compact-disc
+        content_info: none
+      - type: entity
+        entity: input_select.amp_source
+        tap_action:
+          action: call-service
+          service: input_select.select_option
+          data:
+            option: Record
+          target:
+            entity_id: input_select.amp_source
+        icon: mdi:record-player
+        content_info: none
+      - type: entity
+        entity: input_select.amp_source
+        tap_action:
+          action: call-service
+          service: input_select.select_option
+          data:
+            option: Cassette
+          target:
+            entity_id: input_select.amp_source
+        icon: mdi:cassette
+        content_info: none
+      - type: entity
+        entity: input_select.amp_source
+        tap_action:
+          action: call-service
+          service: input_select.select_option
+          data:
+            option: Radio
+          target:
+            entity_id: input_select.amp_source
+        icon: mdi:radio
+        content_info: none
+    alignment: justify
+    card_mod:
+      style: |
+        ha-card {
+          margin-top: 14px;
+          margin-right: 12px;
+          --chip-background: rgba(var(--rgb-disabled), 0.2);
+          --chip-box-shadow: none;
+        }
+```
+
+### Input Select Card Expanded
+
+Author: [rhysb](https://community.home-assistant.io/u/rhysb) | [HA Community](https://community.home-assistant.io/t/mushroom-cards-build-a-beautiful-dashboard-easily/388590/2165)
+
+![Input Select Card Expanded](https://community-assets.home-assistant.io/original/4X/9/5/6/95643b6d25fb02678bc2c92d81639a3f9d68e82d.png)
+
+
+**Entities to replace:**
+* input_select.amp_source `Required`
+* input_select.select_option `Required`
+
+```yaml
+type: custom:stack-in-card
+cards:
+  - type: custom:mushroom-template-card
+    primary: '{{ state_attr(entity, ''friendly_name'') }}'
+    secondary: '{{ states(entity) }}'
+    icon: mdi:audio-input-rca
+    entity: input_select.amp_source
+    icon_color: red
+  - type: custom:mushroom-chips-card
+    chips:
+      - type: entity
+        entity: input_select.amp_source
+        tap_action:
+          action: call-service
+          service: input_select.select_option
+          data:
+            option: CD
+          target:
+            entity_id: input_select.amp_source
+        icon: fas:compact-disc
+        content_info: name
+        name: CD
+      - type: entity
+        entity: input_select.amp_source
+        tap_action:
+          action: call-service
+          service: input_select.select_option
+          data:
+            option: Record
+          target:
+            entity_id: input_select.amp_source
+        icon: null
+        content_info: name
+        name: Record
+      - type: entity
+        entity: input_select.amp_source
+        tap_action:
+          action: call-service
+          service: input_select.select_option
+          data:
+            option: Cassette
+          target:
+            entity_id: input_select.amp_source
+        icon: mdi:cassette
+        content_info: name
+        name: Cassette
+      - type: entity
+        entity: input_select.amp_source
+        tap_action:
+          action: call-service
+          service: input_select.select_option
+          data:
+            option: Radio
+          target:
+            entity_id: input_select.amp_source
+        icon: mdi:radio
+        content_info: name
+        name: Radio
+    alignment: justify
+    card_mod:
+      style: |
+        ha-card {
+          margin: 0px 12px 12px;
+          --chip-background: rgba(var(--rgb-disabled), 0.15);
+          --chip-box-shadow: none;
+          --chip-border-radius: 10px;
+          --chip-height: 42px;
+          --chip-padding:10px;
+        }
+```

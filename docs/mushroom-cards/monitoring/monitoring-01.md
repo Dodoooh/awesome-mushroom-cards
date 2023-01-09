@@ -506,3 +506,240 @@ cards:
                 --ha-card-box-shadow: 0px;
               }
 ```
+
+
+### HACS Card
+
+Author: [ArenaCloser](https://community.home-assistant.io/u/ArenaCloser) | [HA Community](https://community.home-assistant.io/t/mushroom-cards-build-a-beautiful-dashboard-easily/388590/4125)
+
+![](https://community-assets.home-assistant.io/original/4X/c/4/0/c40d04e4f5e3325d50540673be29e64cb2344f9f.jpeg)
+
+**Entities to replace:**
+* sensor.hacs `Required`
+
+```yaml
+type: custom:mushroom-template-card
+entity: ''
+icon: mdi:store
+icon_color: |-
+  {% if states('sensor.hacs') == "0" %}
+  green
+  {% else %}
+  orange
+  {% endif %}
+primary: HACS
+secondary: |-
+  {% if states('sensor.hacs') == "0" %}
+  Up-to-date
+  {% else %}
+  {% for item in state_attr('sensor.hacs', 'repositories') -%}
+    {%- if loop.first %}{{states('sensor.hacs')}} update(s): {% elif loop.last %} en {% else %}, {% endif -%}
+    '{{ item.display_name | lower }}'
+  {%- endfor %}
+  {% endif %}
+multiline_secondary: true
+fill_container: false
+tap_action:
+  action: navigate
+  navigation_path: ../hacs/entry
+ ```
+
+### Speedtest Card
+
+Author: [ArenaCloser](https://community.home-assistant.io/u/ArenaCloser) | [HA Community](https://community.home-assistant.io/t/mushroom-inspiration/484525/61)
+
+![](https://community-assets.home-assistant.io/original/4X/a/a/e/aae57097947fa18ceeadc213c7ae5c1e2c17933e.jpeg)
+
+**Entities to replace:**
+* sensor.speedtest_download `Required`
+* sensor.speedtest_upload `Required`
+* sensor.speedtest_ping `Required`
+
+```yaml
+type: custom:stack-in-card
+cards:
+  - type: custom:mushroom-template-card
+    entity: ''
+    primary: Voer speedtest uit
+    secondary: ''
+    multiline_secondary: true
+    icon: mdi:speedometer
+    icon_color: grey
+    tap_action:
+      action: call-service
+      service: speedtestdotnet.speedtest
+      data: {}
+      target: {}
+  - type: custom:mushroom-template-card
+    card_mod:
+      style: |
+        ha-card {
+          margin: -25px 12px 0px 12px;
+          border-bottom: solid 2px rgba(var(--rgb-disabled), 0.2);
+        }
+  - type: custom:vertical-stack-in-card
+    horizontal: true
+    cards:
+      - type: vertical-stack
+        cards:
+          - type: custom:apexcharts-card
+            chart_type: radialBar
+            series:
+              - entity: sensor.speedtest_download
+                color: rgb(255, 87, 34)
+                max: 60
+                show:
+                  legend_value: false
+            apex_config:
+              plotOptions:
+                radialBar:
+                  offsetY: 0
+                  startAngle: -108
+                  endAngle: 108
+                  hollow:
+                    size: 80%
+                  dataLabels:
+                    name:
+                      show: false
+                    value:
+                      show: false
+                  track:
+                    strokeWidth: 70%
+                    margin: 0
+              fill:
+                type: gradient
+                gradient:
+                  shade: light
+                  type: horizontal
+                  shadeIntensity: 0.3
+                  inverseColors: false
+                  opacityFrom: 1
+                  opacityTo: 1
+                  stops:
+                    - 0
+                    - 50
+                    - 55
+                    - 90
+              legend:
+                show: false
+              chart:
+                height: 130
+            card_mod:
+              style: |
+                ha-card {
+                  box-shadow: none;
+                  background: none;
+                }
+          - type: custom:mushroom-entity-card
+            entity: sensor.speedtest_download
+            primary_info: state
+            secondary_info: name
+            name: Download
+            icon: mdi:download
+            icon_color: deep-orange
+            layout: vertical
+            card_mod:
+              style: |
+                ha-card {
+                  margin-top: -65px;
+                  margin-left: auto;
+                  margin-right: auto;
+                  margin-bottom: 2px;
+                  box-shadow: none;
+                  background: none;
+                }
+      - type: vertical-stack
+        cards:
+          - type: custom:apexcharts-card
+            chart_type: radialBar
+            series:
+              - entity: sensor.speedtest_upload
+                color: rgb(33, 150, 243)
+                max: 60
+                show:
+                  legend_value: false
+            apex_config:
+              plotOptions:
+                radialBar:
+                  offsetY: 0
+                  startAngle: -108
+                  endAngle: 108
+                  hollow:
+                    size: 80%
+                  dataLabels:
+                    name:
+                      show: false
+                    value:
+                      show: false
+                  track:
+                    strokeWidth: 70%
+                    margin: 0
+              fill:
+                type: gradient
+                gradient:
+                  shade: light
+                  type: horizontal
+                  shadeIntensity: 0.3
+                  inverseColors: false
+                  opacityFrom: 1
+                  opacityTo: 1
+                  stops:
+                    - 0
+                    - 50
+                    - 55
+                    - 90
+              legend:
+                show: false
+              chart:
+                height: 130
+            card_mod:
+              style: |
+                ha-card {
+                  box-shadow: none;
+                  background: none;
+                }
+          - type: custom:mushroom-entity-card
+            entity: sensor.speedtest_upload
+            primary_info: state
+            secondary_info: name
+            name: Upload
+            icon: mdi:upload
+            icon_color: blue
+            layout: vertical
+            card_mod:
+              style: |
+                ha-card {
+                  margin-top: -65px;
+                  margin-left: auto;
+                  margin-right: auto;
+                  margin-bottom: 2px;
+                  box-shadow: none;
+                  background: none;
+                }
+      - type: vertical-stack
+        cards:
+          - type: custom:mushroom-entity-card
+            entity: sensor.speedtest_ping
+            primary_info: state
+            secondary_info: name
+            name: Ping
+            icon_color: teal
+            icon: mdi:wan
+            layout: vertical
+            card_mod:
+              style: |
+                ha-card {
+                  margin-top: 20px;
+                  margin-left: auto;
+                  margin-right: auto;
+                  margin-bottom: 2px;
+                  box-shadow: none;
+                  background: none;
+                }
+    card_mod:
+      style: |
+        ha-card {
+          box-shadow: none;
+          background: none;
+        }
+ ```
